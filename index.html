@@ -20,7 +20,7 @@
     }
 
     a:hover {
-      color: #555; /* On-hover link color */
+      color: #555; /* Accent color on hover */
     }
 
     /* Header */
@@ -90,7 +90,8 @@
       flex-wrap: wrap;
       align-items: center;
       justify-content: center;
-      gap: 1.5rem;
+      gap: 2rem;
+      margin-top: 1rem;
     }
 
     .cultivation-content img {
@@ -100,7 +101,12 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
-    /* Contact */
+    .cultivation-content .text {
+      flex: 1;
+      max-width: 500px;
+    }
+
+    /* Contact Section */
     .contact {
       background: #f9f9f9; /* Light grey background */
       text-align: center;
@@ -158,17 +164,26 @@
 
     <!-- Cultivation Section -->
     <section class="section fade-section" id="cultivation" aria-labelledby="cultivation-title">
-      <h2 id="cultivation-title">My Cultivation Process</h2>
+      <h2 id="cultivation-title">Our Products and Cultivation Process</h2>
       <div class="cultivation-content">
-        <img src="assets/images/LMGROWBLOCK.png" alt="Lion's Mane Fruiting Block" width="400" height="400">
-        <p>My cultivation process helps yield one result: affordable, quality supplements and fresh mushrooms for the customer. The products you buy from me should be superior compared to anything else online as well as effective for whatever purpose you need them.</p>
-        <p>Every mushroom I grow is carefully monitored from culture to harvest, using proven techniques that maximize both active compounds and nutritional value.</p>
+        <!-- Lion's Mane Fruiting Block Image -->
+        <img src="assets/images/LMGROWBLOCK.png" alt="Lion's Mane Fruiting Block">
+        <div class="text">
+          <!-- Description of products -->
+          <p>
+            My cultivation process helps yield one result: <strong>affordable, quality supplements and fresh mushrooms for the customer.</strong> The products you buy from me should be superior to anything else online as well as effective for whatever purpose you need them.
+          </p>
+          <p>
+            Every mushroom I grow is carefully monitored from culture to harvest, using proven techniques that maximize both active compounds and nutritional value. Whether you're looking for fresh gourmet varieties for cooking, dried mushrooms for long-term storage, or concentrated supplements for health benefits, my focus remains the same: delivering products that work.
+          </p>
+          <p>I source only the finest growing materials and maintain optimal growing conditions to ensure consistent results batch after batch.</p>
+        </div>
       </div>
     </section>
 
     <!-- Contact Section -->
     <section class="contact fade-section" id="contact" aria-labelledby="contact-title">
-      <h2 id="contact-title">Contact Me</h2>
+      <h2 id="contact-title">Get in Touch</h2>
       <div class="contact-info">
         <p>📧 Email: <a href="mailto:mushroomsmedium@gmail.com">mushroomsmedium@gmail.com</a></p>
         <p>📞 Phone: <a href="tel:+18652559752">865-255-9752</a></p>
