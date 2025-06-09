@@ -196,29 +196,28 @@
     <p>&copy; 2025 Mushrooms' Medium. All Rights Reserved.</p>
   </footer>
 
-  <script>
-    // Function to check if an element is in the viewport
-    function isInViewport(element) {
-      const rect = element.getBoundingClientRect();
-      return (
-        rect.top >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
-      );
-    }
+ <script>
+  // Function to check if an element is in the viewport
+  function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top < window.innerHeight && rect.bottom > 0
+    );
+  }
 
-    // Function to handle scroll and reveal sections
-    function handleScroll() {
-      const sections = document.querySelectorAll('.fade-section');
-      sections.forEach((section) => {
-        if (isInViewport(section)) {
-          section.classList.add('visible');
-        }
-      });
-    }
+  // Function to add the "visible" class to sections in view
+  function handleScroll() {
+    const sections = document.querySelectorAll('.fade-section');
+    sections.forEach((section) => {
+      if (isInViewport(section)) {
+        section.classList.add('visible');
+      }
+    });
+  }
 
-    // Event listeners for scroll and page load
-    window.addEventListener('scroll', handleScroll);
-    document.addEventListener('DOMContentLoaded', handleScroll);
-  </script>
+  // Run scroll detection on page load and scroll
+  document.addEventListener('DOMContentLoaded', handleScroll);
+  window.addEventListener('scroll', handleScroll);
+</script>
 </body>
 </html>
