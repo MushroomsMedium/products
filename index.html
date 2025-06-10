@@ -85,6 +85,11 @@
       margin-bottom: 1.5rem;
     }
 
+    /* Shiny Text Effect */
+    #shiny-heading {
+      margin-bottom: 1.5rem;
+    }
+
     .cultivation-content {
       display: flex;
       flex-wrap: wrap;
@@ -103,6 +108,17 @@
     .cultivation-content .text {
       flex: 1;
       max-width: 500px;
+    }
+
+    /* Contact Section */
+    .contact {
+      background: #f9f9f9; /* Light grey background */
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .contact p {
+      margin: 0.5rem 0;
     }
 
     /* Footer */
@@ -125,10 +141,22 @@
       transform: translateY(0);
     }
 
-    /* Keyframes for gradient animation */
-    @keyframes gradient-scroll {
+    /* Shiny Text Keyframe */
+    @keyframes shiny-text {
       0% { background-position: 0%; }
       100% { background-position: 200%; }
+    }
+
+    .shiny-text {
+      font-weight: bold;
+      font-size: 2.5rem;
+      text-align: center;
+      background: linear-gradient(to right, #000, #555, #000);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      background-size: 200%;
+      animation: shiny-text 2.5s linear infinite;
     }
   </style>
 </head>
@@ -148,25 +176,26 @@
   <!-- Main Content -->
   <main>
     <!-- Hero Section -->
-    <section id="home" class="hero fade-section">
+    <section class="hero fade-section" id="home">
       <div class="hero-content">
         <h1>Welcome to Mushrooms' Medium</h1>
-        <p>Premium fresh mushrooms and wellness supplements</p>
+        <p>Premium fresh mushrooms & wellness supplements</p>
         <a href="#cultivation">Learn More</a>
       </div>
     </section>
 
     <!-- Cultivation Section -->
-    <section id="cultivation" class="section fade-section" aria-labelledby="cultivation-title">
+    <section class="section fade-section" id="cultivation" aria-labelledby="cultivation-title">
       <h2 id="cultivation-title" class="shiny-text">My products and cultivation process</h2>
       <div class="cultivation-content">
+        <!-- Lion's Mane Fruiting Block Image -->
         <img src="assets/images/LMGROWBLOCK.png" alt="Lion's Mane Fruiting Block">
         <div class="text">
           <p>
             My cultivation process helps yield one result: <strong>affordable, quality supplements and fresh mushrooms for the customer.</strong> The products you buy from me should be superior to anything else online as well as effective for whatever purpose you need them.
           </p>
           <p>
-            Currently, I have <strong>lion’s mane pills</strong> and <strong>dried lion’s mane</strong> in stock. Please contact me for additional product inquiries.
+            Every mushroom I grow is carefully monitored from culture to harvest, using proven techniques that maximize both active compounds and nutritional value. Currently, I have <strong>lion’s mane pills</strong> and <strong>dried lion’s mane</strong> in stock; please contact me for additional product inquiries.
           </p>
           <p>
             I source only the finest growing materials and maintain optimal growing conditions to ensure consistent results batch after batch.
@@ -176,49 +205,42 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact fade-section" aria-labelledby="contact-title">
+    <section class="contact fade-section" id="contact" aria-labelledby="contact-title">
       <h2 id="contact-title">Get in Touch</h2>
-      <div id="contact-gradient"></div> <!-- React component will render here -->
+      <div class="contact-info">
+        <p>📧 Email: <a href="mailto:mushroomsmedium@gmail.com">mushroomsmedium@gmail.com</a></p>
+        <p>📞 Phone: <a href="tel:+18652559752">865-255-9752</a></p>
+      </div>
     </section>
   </main>
 
   <!-- Footer Section -->
   <footer role="contentinfo">
-    <p>&copy; 2025 Mushrooms' Medium. All rights reserved.</p>
+    <p>&copy; 2025 Mushrooms' Medium. All Rights Reserved.</p>
   </footer>
 
-  <!-- React and ReactDOM -->
-  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-
-  <!-- Gradient Text React Component -->
   <script>
-    const { createRoot } = ReactDOM;
+    // Function to check if an element is in the viewport
+    function isInViewport(element) {
+      const rect = element.getBoundingClientRect();
+      return (
+        rect.top < window.innerHeight && rect.bottom > 0
+      );
+    }
 
-    // GradientText Component
-    const GradientText = ({ text }) => {
-      const style = {
-        fontWeight: "bold",
-        fontSize: "1.25rem",
-        background: "linear-gradient(90deg, silver, black, silver)",
-        backgroundClip: "text",
-        WebkitBackgroundClip: "text",
-        color: "transparent",
-        backgroundSize: "200%",
-        animation: `gradient-scroll 4s linear infinite`,
-      };
+    // Function to handle scroll and reveal sections
+    function handleScroll() {
+      const sections = document.querySelectorAll('.fade-section');
+      sections.forEach((section) => {
+        if (isInViewport(section)) {
+          section.classList.add('visible');
+        }
+      });
+    }
 
-      return <p style={style}>{text}</p>;
-    };
-
-    // Mount Gradient Text for Email and Phone
-    const root = createRoot(document.getElementById("contact-gradient"));
-    root.render(
-      <>
-        <GradientText text="📧 Email: mushroomsmedium@gmail.com" />
-        <GradientText text="📞 Phone: 865-255-9752" />
-      </>
-    );
+    // Event listeners for scroll and page load
+    window.addEventListener('scroll', handleScroll);
+    document.addEventListener('DOMContentLoaded', handleScroll);
   </script>
 </body>
 </html>
