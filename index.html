@@ -25,7 +25,7 @@
 
     /* Header */
     header {
-      background: #fff;
+      background: #fff; /* White header */
       padding: 1rem;
       border-bottom: 1px solid #ccc;
       display: flex;
@@ -85,6 +85,24 @@
       margin-bottom: 1.5rem;
     }
 
+    /* Shiny Text Effect */
+    .shiny-text {
+      background: linear-gradient(90deg, #000, #555, #000);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      animation: shine 3s linear infinite;
+    }
+
+    @keyframes shine {
+      0% {
+        background-position: 0%;
+      }
+      100% {
+        background-position: 200%;
+      }
+    }
+
     .cultivation-content {
       display: flex;
       flex-wrap: wrap;
@@ -108,7 +126,7 @@
 
     /* Contact Section */
     .contact {
-      background: #f9f9f9; /* Light grey background */
+      background: #f9f9f9;
       text-align: center;
       padding: 2rem;
     }
@@ -127,14 +145,14 @@
 
     /* Fade-and-Slide Animation */
     .fade-section {
-      opacity: 0; /* Invisible by default */
-      transform: translateY(50px); /* Start slightly lower */
+      opacity: 0;
+      transform: translateY(50px);
       transition: opacity 0.8s ease-out, transform 0.8s ease-out;
     }
 
     .fade-section.visible {
-      opacity: 1; /* Fully visible */
-      transform: translateY(0); /* Slide into position */
+      opacity: 1;
+      transform: translateY(0); /* Fully visible */
     }
   </style>
 </head>
@@ -164,17 +182,17 @@
 
     <!-- Cultivation Section -->
     <section class="section fade-section" id="cultivation" aria-labelledby="cultivation-title">
-      <h2 id="cultivation-title">Our Products and Cultivation Process</h2>
+      <h2 id="cultivation-title" class="shiny-text">My products and cultivation process</h2>
       <div class="cultivation-content">
         <!-- Lion's Mane Fruiting Block Image -->
         <img src="assets/images/LMGROWBLOCK.png" alt="Lion's Mane Fruiting Block">
         <div class="text">
-          <!-- Description of products -->
+          <!-- Expanded description of products -->
           <p>
             My cultivation process helps yield one result: <strong>affordable, quality supplements and fresh mushrooms for the customer.</strong> The products you buy from me should be superior to anything else online as well as effective for whatever purpose you need them.
           </p>
           <p>
-            Every mushroom I grow is carefully monitored from culture to harvest, using proven techniques that maximize both active compounds and nutritional value. Whether you're looking for fresh gourmet varieties for cooking, dried mushrooms for long-term storage, or concentrated supplements for health benefits, my focus remains the same: delivering products that work.
+            Every mushroom I grow is carefully monitored from culture to harvest, using proven techniques that maximize both active compounds and nutritional value. Currently, I have <strong>lion’s mane pills</strong> and <strong>dried lion’s mane</strong> in stock; please contact me if you want additional info on other products not mentioned.
           </p>
           <p>I source only the finest growing materials and maintain optimal growing conditions to ensure consistent results batch after batch.</p>
         </div>
@@ -196,28 +214,28 @@
     <p>&copy; 2025 Mushrooms' Medium. All Rights Reserved.</p>
   </footer>
 
- <script>
-  // Function to check if an element is in the viewport
-  function isInViewport(element) {
-    const rect = element.getBoundingClientRect();
-    return (
-      rect.top < window.innerHeight && rect.bottom > 0
-    );
-  }
+  <script>
+    // Function to check if an element is in the viewport
+    function isInViewport(element) {
+      const rect = element.getBoundingClientRect();
+      return (
+        rect.top < window.innerHeight && rect.bottom > 0
+      );
+    }
 
-  // Function to add the "visible" class to sections in view
-  function handleScroll() {
-    const sections = document.querySelectorAll('.fade-section');
-    sections.forEach((section) => {
-      if (isInViewport(section)) {
-        section.classList.add('visible');
-      }
-    });
-  }
+    // Function to handle scroll and reveal sections
+    function handleScroll() {
+      const sections = document.querySelectorAll('.fade-section');
+      sections.forEach((section) => {
+        if (isInViewport(section)) {
+          section.classList.add('visible');
+        }
+      });
+    }
 
-  // Run scroll detection on page load and scroll
-  document.addEventListener('DOMContentLoaded', handleScroll);
-  window.addEventListener('scroll', handleScroll);
-</script>
+    // Event listeners for scroll and page load
+    window.addEventListener('scroll', handleScroll);
+    document.addEventListener('DOMContentLoaded', handleScroll);
+  </script>
 </body>
 </html>
