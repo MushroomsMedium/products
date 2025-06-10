@@ -85,20 +85,6 @@
       margin-bottom: 1.5rem;
     }
 
-    /* Gradient Email & Phone */
-    .gradient-text {
-      background: linear-gradient(90deg, #C0C0C0, #000, #C0C0C0); /* Silver to black gradient */
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-size: 200%;
-      animation: gradient-scroll 3s linear infinite;
-    }
-
-    @keyframes gradient-scroll {
-      0% { background-position: 0%; }
-      100% { background-position: 200%; }
-    }
-
     .cultivation-content {
       display: flex;
       flex-wrap: wrap;
@@ -119,23 +105,6 @@
       max-width: 500px;
     }
 
-    /* Contact Section */
-    .contact {
-      background: #f9f9f9; /* Light grey background */
-      text-align: center;
-      padding: 2rem;
-    }
-
-    .contact-info .gradient-text {
-      font-weight: bold;
-      font-size: 1.2rem; /* Make the gradient text stand out */
-      display: inline-block; /* Ensure gradient works within inline elements */
-    }
-
-    .contact p {
-      margin: 0.5rem 0;
-    }
-
     /* Footer */
     footer {
       background: #000;
@@ -154,6 +123,12 @@
     .fade-section.visible {
       opacity: 1; /* Fully visible */
       transform: translateY(0);
+    }
+
+    /* Keyframes for gradient animation */
+    @keyframes gradient-scroll {
+      0% { background-position: 0%; }
+      100% { background-position: 200%; }
     }
   </style>
 </head>
@@ -191,7 +166,7 @@
             My cultivation process helps yield one result: <strong>affordable, quality supplements and fresh mushrooms for the customer.</strong> The products you buy from me should be superior to anything else online as well as effective for whatever purpose you need them.
           </p>
           <p>
-            Every mushroom I grow is carefully monitored from culture to harvest, using proven techniques that maximize both active compounds and nutritional value. Currently, I have <strong>lion’s mane pills</strong> and <strong>dried lion’s mane</strong> in stock; please contact me for additional product inquiries.
+            Currently, I have <strong>lion’s mane pills</strong> and <strong>dried lion’s mane</strong> in stock. Please contact me for additional product inquiries.
           </p>
           <p>
             I source only the finest growing materials and maintain optimal growing conditions to ensure consistent results batch after batch.
@@ -203,10 +178,7 @@
     <!-- Contact Section -->
     <section id="contact" class="contact fade-section" aria-labelledby="contact-title">
       <h2 id="contact-title">Get in Touch</h2>
-      <div class="contact-info">
-        <p>📧 Email: <span class="gradient-text"><a href="mailto:mushroomsmedium@gmail.com">mushroomsmedium@gmail.com</a></span></p>
-        <p>📞 Phone: <span class="gradient-text"><a href="tel:+18652559752">865-255-9752</a></span></p>
-      </div>
+      <div id="contact-gradient"></div> <!-- React component will render here -->
     </section>
   </main>
 
@@ -215,26 +187,38 @@
     <p>&copy; 2025 Mushrooms' Medium. All rights reserved.</p>
   </footer>
 
+  <!-- React and ReactDOM -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+  <!-- Gradient Text React Component -->
   <script>
-    // Function to reveal sections on scroll
-    function isInViewport(element) {
-      const rect = element.getBoundingClientRect();
-      return (
-        rect.top < window.innerHeight && rect.bottom > 0
-      );
-    }
+    const { createRoot } = ReactDOM;
 
-    function handleScroll() {
-      const sections = document.querySelectorAll('.fade-section');
-      sections.forEach((section) => {
-        if (isInViewport(section)) {
-          section.classList.add('visible');
-        }
-      });
-    }
+    // GradientText Component
+    const GradientText = ({ text }) => {
+      const style = {
+        fontWeight: "bold",
+        fontSize: "1.25rem",
+        background: "linear-gradient(90deg, silver, black, silver)",
+        backgroundClip: "text",
+        WebkitBackgroundClip: "text",
+        color: "transparent",
+        backgroundSize: "200%",
+        animation: `gradient-scroll 4s linear infinite`,
+      };
 
-    window.addEventListener('scroll', handleScroll);
-    document.addEventListener('DOMContentLoaded', handleScroll);
+      return <p style={style}>{text}</p>;
+    };
+
+    // Mount Gradient Text for Email and Phone
+    const root = createRoot(document.getElementById("contact-gradient"));
+    root.render(
+      <>
+        <GradientText text="📧 Email: mushroomsmedium@gmail.com" />
+        <GradientText text="📞 Phone: 865-255-9752" />
+      </>
+    );
   </script>
 </body>
 </html>
