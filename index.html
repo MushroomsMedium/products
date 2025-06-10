@@ -87,19 +87,22 @@
 
     /* Shiny Text Effect */
     .shiny-text {
+      font-weight: bold;
+      font-size: 2rem;
       background: linear-gradient(90deg, #000, #555, #000);
+      background-size: 200%;
       background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      animation: shine 3s linear infinite;
+      -webkit-background-clip: text; /* For Webkit browsers */
+      color: transparent; /* Text is transparent so gradient shows */
+      animation: shiny-slide 3s linear infinite;
     }
 
-    @keyframes shine {
+    @keyframes shiny-slide {
       0% {
-        background-position: 0%;
+        background-position: 0%; /* Start at left */
       }
       100% {
-        background-position: 200%;
+        background-position: 200%; /* Slide to right */
       }
     }
 
@@ -126,7 +129,7 @@
 
     /* Contact Section */
     .contact {
-      background: #f9f9f9;
+      background: #f9f9f9; /* Light grey background */
       text-align: center;
       padding: 2rem;
     }
@@ -152,7 +155,7 @@
 
     .fade-section.visible {
       opacity: 1;
-      transform: translateY(0); /* Fully visible */
+      transform: translateY(0);
     }
   </style>
 </head>
