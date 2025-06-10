@@ -85,7 +85,7 @@
       margin-bottom: 1.5rem;
     }
 
-    /* Shiny Text Placeholder */
+    /* Shiny Text Effect */
     #shiny-heading {
       margin-bottom: 1.5rem;
     }
@@ -141,19 +141,32 @@
       transform: translateY(0);
     }
 
-    @keyframes shiny-slide {
+    /* Shiny Text Keyframe */
+    @keyframes shiny-text {
       0% { background-position: 0%; }
       100% { background-position: 200%; }
+    }
+
+    .shiny-text {
+      font-weight: bold;
+      font-size: 2.5rem;
+      text-align: center;
+      background: linear-gradient(to right, #000, #555, #000);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      background-size: 200%;
+      animation: shiny-text 2.5s linear infinite;
     }
   </style>
 </head>
 <body>
-  <!-- Header -->
-  <header>
+  <!-- Header Section -->
+  <header role="banner">
     <div class="logo">
       <img src="assets/images/MMLOGO.jpg" alt="Mushrooms' Medium Logo">
     </div>
-    <nav>
+    <nav role="navigation">
       <a href="#home">Home</a>
       <a href="#cultivation">Cultivation</a>
       <a href="#contact">Contact</a>
@@ -163,66 +176,71 @@
   <!-- Main Content -->
   <main>
     <!-- Hero Section -->
-    <section id="home" class="hero fade-section">
-      <h1>Welcome to Mushrooms' Medium</h1>
-      <p>Premium fresh mushrooms and wellness supplements</p>
-      <a href="#cultivation">Learn More</a>
+    <section class="hero fade-section" id="home">
+      <div class="hero-content">
+        <h1>Welcome to Mushrooms' Medium</h1>
+        <p>Premium fresh mushrooms & wellness supplements</p>
+        <a href="#cultivation">Learn More</a>
+      </div>
     </section>
 
     <!-- Cultivation Section -->
-    <section id="cultivation" class="section fade-section">
-      <!-- React Component Placeholder -->
-      <div id="shiny-heading"></div>
+    <section class="section fade-section" id="cultivation" aria-labelledby="cultivation-title">
+      <h2 id="cultivation-title" class="shiny-text">My products and cultivation process</h2>
       <div class="cultivation-content">
+        <!-- Lion's Mane Fruiting Block Image -->
         <img src="assets/images/LMGROWBLOCK.png" alt="Lion's Mane Fruiting Block">
         <div class="text">
-          <p>My cultivation process helps yield one result: <strong>affordable, quality supplements and fresh mushrooms for the customer.</strong> The products you buy from me should be superior to anything else online as well as effective for whatever purpose you need them.</p>
-          <p>Currently, I have <strong>lion’s mane pills</strong> and <strong>dried lion’s mane</strong> in stock. Please contact me for additional product inquiries.</p>
+          <p>
+            My cultivation process helps yield one result: <strong>affordable, quality supplements and fresh mushrooms for the customer.</strong> The products you buy from me should be superior to anything else online as well as effective for whatever purpose you need them.
+          </p>
+          <p>
+            Every mushroom I grow is carefully monitored from culture to harvest, using proven techniques that maximize both active compounds and nutritional value. Currently, I have <strong>lion’s mane pills</strong> and <strong>dried lion’s mane</strong> in stock; please contact me for additional product inquiries.
+          </p>
+          <p>
+            I source only the finest growing materials and maintain optimal growing conditions to ensure consistent results batch after batch.
+          </p>
         </div>
       </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact fade-section">
-      <h2>Contact Me</h2>
-      <p>Email: <a href="mailto:mushroomsmedium@gmail.com">mushroomsmedium@gmail.com</a></p>
-      <p>Phone: <a href="tel:+18652559752">865-255-9752</a></p>
+    <section class="contact fade-section" id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Get in Touch</h2>
+      <div class="contact-info">
+        <p>📧 Email: <a href="mailto:mushroomsmedium@gmail.com">mushroomsmedium@gmail.com</a></p>
+        <p>📞 Phone: <a href="tel:+18652559752">865-255-9752</a></p>
+      </div>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Mushrooms' Medium. All rights reserved.</p>
+  <!-- Footer Section -->
+  <footer role="contentinfo">
+    <p>&copy; 2025 Mushrooms' Medium. All Rights Reserved.</p>
   </footer>
 
-  <!-- React and ReactDOM -->
-  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-
-  <!-- Shiny Text Component -->
   <script>
-    const { createRoot } = ReactDOM;
+    // Function to check if an element is in the viewport
+    function isInViewport(element) {
+      const rect = element.getBoundingClientRect();
+      return (
+        rect.top < window.innerHeight && rect.bottom > 0
+      );
+    }
 
-    // ShinyText Component
-    const ShinyText = ({ text, speed = 4 }) => {
-      const style = {
-        fontWeight: "bold",
-        fontSize: "2.5rem",
-        background: "linear-gradient(90deg, #000, #555, #000)",
-        color: "transparent",
-        backgroundClip: "text",
-        WebkitBackgroundClip: "text",
-        backgroundSize: "200%",
-        animation: `shiny-slide ${speed}s linear infinite`,
-        textAlign: "center",
-      };
+    // Function to handle scroll and reveal sections
+    function handleScroll() {
+      const sections = document.querySelectorAll('.fade-section');
+      sections.forEach((section) => {
+        if (isInViewport(section)) {
+          section.classList.add('visible');
+        }
+      });
+    }
 
-      return <h2 style={style}>{text}</h2>;
-    };
-
-    // Mount ShinyText Component
-    const root = createRoot(document.getElementById("shiny-heading"));
-    root.render(<ShinyText text="My products and cultivation process" />);
+    // Event listeners for scroll and page load
+    window.addEventListener('scroll', handleScroll);
+    document.addEventListener('DOMContentLoaded', handleScroll);
   </script>
 </body>
 </html>
