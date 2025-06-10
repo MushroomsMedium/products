@@ -74,68 +74,24 @@
       background: #333; /* Darker black on hover */
     }
 
-    /* Section Styling */
-    .section {
-      padding: 2rem 5%;
-    }
-
-    .section h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-    }
-
-    /* Shiny Text Effect */
-    .shiny-text {
-      font-weight: bold;
-      font-size: 2rem;
-      background: linear-gradient(90deg, #000, #555, #000);
-      background-size: 200%;
-      background-clip: text;
-      -webkit-background-clip: text; /* For Webkit browsers */
-      color: transparent; /* Text is transparent so gradient shows */
-      animation: shiny-slide 3s linear infinite;
-    }
-
-    @keyframes shiny-slide {
-      0% {
-        background-position: 0%; /* Start at left */
-      }
-      100% {
-        background-position: 200%; /* Slide to right */
-      }
-    }
-
+    /* Cultivation Content */
     .cultivation-content {
       display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
       gap: 2rem;
-      margin-top: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     .cultivation-content img {
       width: 100%;
       max-width: 400px;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
 
     .cultivation-content .text {
       flex: 1;
       max-width: 500px;
-    }
-
-    /* Contact Section */
-    .contact {
-      background: #f9f9f9; /* Light grey background */
-      text-align: center;
-      padding: 2rem;
-    }
-
-    .contact p {
-      margin: 0.5rem 0;
     }
 
     /* Footer */
@@ -145,100 +101,88 @@
       text-align: center;
       padding: 1rem;
     }
-
-    /* Fade-and-Slide Animation */
-    .fade-section {
-      opacity: 0;
-      transform: translateY(50px);
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    }
-
-    .fade-section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
   </style>
 </head>
 <body>
-  <!-- Header Section -->
-  <header role="banner">
+  <!-- Header -->
+  <header>
     <div class="logo">
       <img src="assets/images/MMLOGO.jpg" alt="Mushrooms' Medium Logo">
     </div>
-    <nav role="navigation">
+    <nav>
       <a href="#home">Home</a>
       <a href="#cultivation">Cultivation</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <!-- Main Content -->
-  <main>
-    <!-- Hero Section -->
-    <section class="hero fade-section" id="home">
-      <div class="hero-content">
-        <h1>Welcome to Mushrooms' Medium</h1>
-        <p>Premium fresh mushrooms & wellness supplements</p>
-        <a href="#cultivation">Learn More</a>
-      </div>
-    </section>
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <h1>Welcome to Mushrooms' Medium</h1>
+    <p>Premium fresh mushrooms and wellness supplements</p>
+    <a href="#cultivation">Explore</a>
+  </section>
 
-    <!-- Cultivation Section -->
-    <section class="section fade-section" id="cultivation" aria-labelledby="cultivation-title">
-      <h2 id="cultivation-title" class="shiny-text">My products and cultivation process</h2>
-      <div class="cultivation-content">
-        <!-- Lion's Mane Fruiting Block Image -->
-        <img src="assets/images/LMGROWBLOCK.png" alt="Lion's Mane Fruiting Block">
-        <div class="text">
-          <!-- Expanded description of products -->
-          <p>
-            My cultivation process helps yield one result: <strong>affordable, quality supplements and fresh mushrooms for the customer.</strong> The products you buy from me should be superior to anything else online as well as effective for whatever purpose you need them.
-          </p>
-          <p>
-            Every mushroom I grow is carefully monitored from culture to harvest, using proven techniques that maximize both active compounds and nutritional value. Currently, I have <strong>lion’s mane pills</strong> and <strong>dried lion’s mane</strong> in stock; please contact me if you want additional info on other products not mentioned.
-          </p>
-          <p>I source only the finest growing materials and maintain optimal growing conditions to ensure consistent results batch after batch.</p>
-        </div>
+  <!-- Cultivation Section -->
+  <section id="cultivation" class="section">
+    <div id="shiny-heading"></div> <!-- React component is injected here -->
+    <div class="cultivation-content">
+      <img src="assets/images/LMGROWBLOCK.png" alt="Lion's Mane Fruiting Block">
+      <div class="text">
+        <p>My cultivation process helps yield one result: <strong>affordable, quality supplements and fresh mushrooms for the customer.</strong> The products you buy from me should be superior to anything else online as well as effective for whatever purpose you need them.</p>
+        <p>Every mushroom I grow is carefully monitored from culture to harvest, maximizing both active compounds and nutritional value. Currently, I have <strong>lion’s mane pills</strong> and <strong>dried lion’s mane</strong> in stock; please contact me for additional product inquiries.</p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Contact Section -->
-    <section class="contact fade-section" id="contact" aria-labelledby="contact-title">
-      <h2 id="contact-title">Get in Touch</h2>
-      <div class="contact-info">
-        <p>📧 Email: <a href="mailto:mushroomsmedium@gmail.com">mushroomsmedium@gmail.com</a></p>
-        <p>📞 Phone: <a href="tel:+18652559752">865-255-9752</a></p>
-      </div>
-    </section>
-  </main>
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:mushroomsmedium@gmail.com">mushroomsmedium@gmail.com</a></p>
+    <p>Phone: <a href="tel:+18652559752">865-255-9752</a></p>
+  </section>
 
-  <!-- Footer Section -->
-  <footer role="contentinfo">
-    <p>&copy; 2025 Mushrooms' Medium. All Rights Reserved.</p>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Mushrooms' Medium. All rights reserved.</p>
   </footer>
 
-  <script>
-    // Function to check if an element is in the viewport
-    function isInViewport(element) {
-      const rect = element.getBoundingClientRect();
-      return (
-        rect.top < window.innerHeight && rect.bottom > 0
-      );
-    }
+  <!-- React and ReactDOM -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 
-    // Function to handle scroll and reveal sections
-    function handleScroll() {
-      const sections = document.querySelectorAll('.fade-section');
-      sections.forEach((section) => {
-        if (isInViewport(section)) {
-          section.classList.add('visible');
-        }
-      });
-    }
+  <!-- Shiny Text Component -->
+  <script type="text/javascript">
+    const { createRoot } = ReactDOM;
 
-    // Event listeners for scroll and page load
-    window.addEventListener('scroll', handleScroll);
-    document.addEventListener('DOMContentLoaded', handleScroll);
+    // ShinyText component
+    const ShinyText = ({ text, speed = 10 }) => {
+      const animationStyle = {
+        background: "linear-gradient(90deg, #000, #555, #000)",
+        backgroundSize: "200%",
+        WebkitBackgroundClip: "text",
+        color: "transparent",
+        animation: `shiny-slide ${speed}s linear infinite`,
+        fontSize: "2rem",
+        fontWeight: "bold",
+        textAlign: "center",
+        marginBottom: "1.5rem",
+      };
+
+      return <h2 style={animationStyle}>{text}</h2>;
+    };
+
+    // Mount React component for shiny text
+    const root = createRoot(document.getElementById("shiny-heading"));
+    root.render(<ShinyText text="My products and cultivation process" speed={3} />);
   </script>
+
+  <!-- CSS Keyframes -->
+  <style>
+    @keyframes shiny-slide {
+      0% { background-position: 0%; }
+      100% { background-position: 200%; }
+    }
+  </style>
 </body>
 </html>
