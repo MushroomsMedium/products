@@ -3,34 +3,36 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mushrooms’ Medium — Lion’s Mane</title>
-  <meta name="description" content="Lion’s Mane only — fresh (harvest dependent), dried, and tinctures. Harvested within 24–48 hours. Contact to confirm inventory." />
-  <link rel="canonical" href="https://mushroomsmedium.github.io/products" />
+  <title>Mushrooms&rsquo; Medium — Lion&rsquo;s Mane</title>
+  <meta name="description" content="Lion&rsquo;s Mane only — fresh (harvest dependent), dried, and tinctures. Harvested within 24–48 hours. Contact to confirm inventory." />
+
+  <!-- Make all relative URLs resolve from the site root -->
+  <base href="https://mushroomsmedium.github.io/" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Mushrooms’ Medium — Lion’s Mane" />
-  <meta property="og:description" content="A focused selection of premium Lion’s Mane products. Fresh, dried, and tinctures." />
+  <meta property="og:title" content="Mushrooms&rsquo; Medium — Lion&rsquo;s Mane" />
+  <meta property="og:description" content="A focused selection of premium Lion&rsquo;s Mane products. Fresh, dried, and tinctures." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://mushroomsmedium.github.io/products" />
   <meta property="og:image" content="https://mushroomsmedium.github.io/assets/images/LMGROWBLOCK.png" />
   <meta name="theme-color" content="#0f766e" />
 
   <!-- Performance hints -->
-  <link rel="preload" as="image" href="../assets/images/MMBACKGROUND.png" />
-  <link rel="preload" as="image" href="../assets/images/LMGROWBLOCK.png" />
+  <link rel="preload" as="image" href="/assets/images/MMBACKGROUND.png" />
+  <link rel="preload" as="image" href="/assets/images/LMGROWBLOCK.png" />
 
-  <link rel="stylesheet" href="../assets/css/style.css" />
+  <!-- Cache‑bust stylesheet -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=4" />
 </head>
 
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Header -->
   <header class="site-header glass">
     <div class="container header-inner">
-      <a class="brand" href="/products/" aria-label="Mushrooms’ Medium home">
-        <img src="../assets/images/MMLOGO.jpg" alt="Mushrooms’ Medium logo" class="brand__logo" />
-        <span class="brand__name">Mushrooms’ Medium</span>
+      <a class="brand" href="/products/" aria-label="Mushrooms&rsquo; Medium home">
+        <img src="/assets/images/MMLOGO.jpg" alt="Mushrooms&rsquo; Medium logo" class="brand__logo" />
+        <span class="brand__name">Mushrooms&rsquo; Medium</span>
       </a>
 
       <nav aria-label="Primary">
@@ -46,17 +48,16 @@
   </header>
 
   <main id="main">
-
-    <!-- HERO — bold, modern, focused -->
+    <!-- HERO -->
     <section class="hero hero--edge" aria-labelledby="hero-title">
       <div class="hero__bg" role="img" aria-label="Soft textured mushroom background"></div>
       <div class="container hero__content">
         <div class="hero__text">
-          <h1 id="hero-title">Lion’s Mane, done right.</h1>
+          <h1 id="hero-title">Lion&rsquo;s Mane, done right.</h1>
           <p class="lead">Cleanly cultivated. Harvested fast. Served with care.</p>
 
           <div class="hero__ctas">
-            <a class="btn btn--primary" href="#shop">Shop Lion’s Mane</a>
+            <a class="btn btn--primary" href="#shop">Shop Lion&rsquo;s Mane</a>
             <a class="btn btn--ghost" href="#contact">Confirm Inventory</a>
           </div>
 
@@ -69,27 +70,27 @@
 
         <aside class="hero__visual">
           <figure class="product-hero">
-            <img src="../assets/images/LMGROWBLOCK.png" alt="Lion’s Mane grow block close‑up" width="720" height="720" loading="eager" />
+            <img src="/assets/images/LMGROWBLOCK.png" alt="Lion&rsquo;s Mane grow block close‑up" width="720" height="720" loading="eager" />
           </figure>
         </aside>
       </div>
     </section>
 
-    <!-- SHOP — only Lion’s Mane products -->
+    <!-- SHOP — Lion's Mane only -->
     <section id="shop" class="section" aria-labelledby="shop-title">
       <div class="container">
-        <h2 id="shop-title">Shop Lion’s Mane</h2>
+        <h2 id="shop-title">Shop Lion&rsquo;s Mane</h2>
         <p class="section-intro">Fresh availability varies. Please email or call to confirm before purchasing.</p>
 
         <div class="grid shop-grid">
           <!-- Fresh -->
           <article class="card product">
             <header class="card__header">
-              <h3 class="card__title">Fresh Lion’s Mane</h3>
+              <h3 class="card__title">Fresh Lion&rsquo;s Mane</h3>
               <span class="pill pill--amber">Harvest‑dependent</span>
             </header>
             <figure class="card__media on-white">
-              <img src="../assets/images/LMGROWBLOCK.png" alt="Fresh Lion’s Mane cluster on white background" loading="lazy" />
+              <img src="/assets/images/LMGROWBLOCK.png" alt="Fresh Lion&rsquo;s Mane cluster on white background" loading="lazy" />
             </figure>
             <div class="card__body">
               <p>Meaty strands that sear beautifully—ideal for “steaks,” tacos, and soups.</p>
@@ -103,10 +104,10 @@
           <!-- Dried -->
           <article class="card product">
             <header class="card__header">
-              <h3 class="card__title">Dried Lion’s Mane</h3>
+              <h3 class="card__title">Dried Lion&rsquo;s Mane</h3>
               <span class="pill">Shelf‑stable</span>
             </header>
-            <div class="card__media gradient-thumb" role="img" aria-label="Dried Lion’s Mane product"></div>
+            <div class="card__media gradient-thumb" role="img" aria-label="Dried Lion&rsquo;s Mane product"></div>
             <div class="card__body">
               <p>Clean, even dehydration for rich broths and sautés. Rehydrate and cook until golden.</p>
             </div>
@@ -118,10 +119,10 @@
           <!-- Tincture -->
           <article class="card product">
             <header class="card__header">
-              <h3 class="card__title">Lion’s Mane Tincture</h3>
+              <h3 class="card__title">Lion&rsquo;s Mane Tincture</h3>
               <span class="pill pill--accent">House‑made</span>
             </header>
-            <div class="card__media gradient-thumb" role="img" aria-label="Lion’s Mane tincture product"></div>
+            <div class="card__media gradient-thumb" role="img" aria-label="Lion&rsquo;s Mane tincture product"></div>
             <div class="card__body">
               <p>Small‑batch dual extraction. Contact for current batch details and pricing.</p>
             </div>
@@ -136,7 +137,7 @@
     <!-- LEARN — Lion's Mane only -->
     <section id="learn" class="section" aria-labelledby="learn-title">
       <div class="container">
-        <h2 id="learn-title">Lion’s Mane Guide</h2>
+        <h2 id="learn-title">Lion&rsquo;s Mane Guide</h2>
 
         <!-- Quick Facts -->
         <div class="facts">
@@ -185,7 +186,7 @@
             <div class="card__body">
               <ul class="list">
                 <li>Cook thoroughly for best flavor and digestibility.</li>
-                <li>Avoid if you have known mushroom allergies/sensitivities.</li>
+                <li>Avoid if you have known mushroom allergies or sensitivities.</li>
                 <li>Cultivated species only; no foraging identification provided.</li>
                 <li>No medical claims—consult a professional for health questions.</li>
               </ul>
@@ -201,7 +202,7 @@
         <h2 id="gallery-title">Gallery</h2>
         <div class="grid gallery">
           <figure class="gallery__item">
-            <img src="../assets/images/LMGROWBLOCK.png" alt="Lion’s Mane on a neutral background" loading="lazy" />
+            <img src="/assets/images/LMGROWBLOCK.png" alt="Lion&rsquo;s Mane on a neutral background" loading="lazy" />
             <figcaption>LM grow block (production)</figcaption>
           </figure>
         </div>
@@ -221,12 +222,11 @@
     </section>
   </main>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <img src="../assets/images/MMLOGO.jpg" class="brand__logo" alt="Mushrooms’ Medium logo" />
-        <p class="footer-tagline">Lion’s Mane—fresh, focused, and carefully handled.</p>
+        <img src="/assets/images/MMLOGO.jpg" class="brand__logo" alt="Mushrooms&rsquo; Medium logo" />
+        <p class="footer-tagline">Lion&rsquo;s Mane—fresh, focused, and carefully handled.</p>
       </div>
 
       <nav class="footer-nav" aria-label="Footer">
@@ -246,11 +246,11 @@
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; 2025 Mushrooms’ Medium</p>
+      <p>&copy; 2025 Mushrooms&rsquo; Medium</p>
     </div>
   </footer>
 
-  <!-- Schema: LocalBusiness + LM Product (markup only, no JS executed) -->
+  <!-- Schema: LocalBusiness + Product -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
