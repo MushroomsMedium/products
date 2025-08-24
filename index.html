@@ -1,246 +1,434 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mushrooms' Medium</title>
-  <style>
-    /* Global Styles */
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      color: #000; /* Black text */
-      background: #fff; /* White background */
-    }
-
-    a {
-      color: #000; /* Black links */
-      text-decoration: none;
-    }
-
-    a:hover {
-      color: #555; /* Accent color on hover */
-    }
-
-    /* Header */
-    header {
-      background: #fff; /* White header */
-      padding: 1rem;
-      border-bottom: 1px solid #ccc;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    header .logo img {
-      height: 50px;
-    }
-
-    nav a {
-      margin: 0 1rem;
-      font-weight: bold;
-    }
-
-    /* Hero Section */
-    .hero {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      height: 90vh;
-      background: url('assets/images/MMBACKGROUND.png') center/cover no-repeat;
-      color: #fff; /* White text */
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
-    }
-
-    .hero p {
-      font-size: 1.25rem;
-    }
-
-    .hero a {
-      margin-top: 1rem;
-      background: #000; /* Black button */
-      color: #fff; /* White text */
-      padding: 0.75rem 1.5rem;
-      border-radius: 25px;
-    }
-
-    .hero a:hover {
-      background: #333; /* Darker black on hover */
-    }
-
-    /* Section Styling */
-    .section {
-      padding: 2rem 5%;
-    }
-
-    .section h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-    }
-
-    /* Shiny Text Effect */
-    #shiny-heading {
-      margin-bottom: 1.5rem;
-    }
-
-    .cultivation-content {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      gap: 2rem;
-    }
-
-    .cultivation-content img {
-      width: 100%;
-      max-width: 400px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .cultivation-content .text {
-      flex: 1;
-      max-width: 500px;
-    }
-
-    /* Contact Section */
-    .contact {
-      background: #f9f9f9; /* Light grey background */
-      text-align: center;
-      padding: 2rem;
-    }
-
-    .contact p {
-      margin: 0.5rem 0;
-    }
-
-    /* Footer */
-    footer {
-      background: #000;
-      color: #fff;
-      text-align: center;
-      padding: 1rem;
-    }
-
-    /* Fade-and-Slide Animation */
-    .fade-section {
-      opacity: 0;
-      transform: translateY(50px);
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    }
-
-    .fade-section.visible {
-      opacity: 1; /* Fully visible */
-      transform: translateY(0);
-    }
-
-    /* Shiny Text Keyframe */
-    @keyframes shiny-text {
-      0% { background-position: 0%; }
-      100% { background-position: 200%; }
-    }
-
-    .shiny-text {
-      font-weight: bold;
-      font-size: 2.5rem;
-      text-align: center;
-      background: linear-gradient(to right, #000, #555, #000);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      background-size: 200%;
-      animation: shiny-text 2.5s linear infinite;
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mushrooms’ Medium — Products</title>
+  <meta name="description" content="Locally grown mushrooms and lion’s mane products. Harvested within 24–48 hours. Contact to confirm inventory." />
+  <link rel="canonical" href="https://mushroomsmedium.github.io/products" />
+  <meta property="og:title" content="Mushrooms’ Medium — Products" />
+  <meta property="og:description" content="Premium fresh mushrooms & wellness supplements. Harvested within 24–48 hours." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mushroomsmedium.github.io/products" />
+  <meta property="og:image" content="https://mushroomsmedium.github.io/assets/images/MMLOGO.jpg" />
+  <link rel="preload" as="image" href="../assets/images/MMBACKGROUND.png" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
 </head>
+
 <body>
-  <!-- Header Section -->
-  <header role="banner">
-    <div class="logo">
-      <img src="assets/images/MMLOGO.jpg" alt="Mushrooms' Medium Logo">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/products" aria-label="Mushrooms’ Medium home">
+        <img src="../assets/images/MMLOGO.jpg" alt="Mushrooms’ Medium logo" class="brand__logo" />
+        <span class="brand__name">Mushrooms’ Medium</span>
+      </a>
+
+      <nav aria-label="Primary">
+        <ul class="nav">
+          <li><a href="#shop" class="nav__link">Shop</a></li>
+          <li><a href="#learn" class="nav__link">Learn</a></li>
+          <li><a href="#contact" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a href="#shop" class="btn btn--primary">Shop Fresh</a>
     </div>
-    <nav role="navigation">
-      <a href="#home">Home</a>
-      <a href="#cultivation">Cultivation</a>
-      <a href="#contact">Contact</a>
-    </nav>
   </header>
 
-  <!-- Main Content -->
-  <main>
-    <!-- Hero Section -->
-    <section class="hero fade-section" id="home">
-      <div class="hero-content">
-        <h1>Welcome to Mushrooms' Medium</h1>
-        <p>Premium fresh mushrooms & wellness supplements</p>
-        <a href="#cultivation">Learn More</a>
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__bg" role="img" aria-label="Mushroom texture background"></div>
+      <div class="container hero__content">
+        <div class="hero__text">
+          <h1 id="hero-title">Premium fresh mushrooms & wellness supplements</h1>
+          <p class="lead">Harvested fast, handled clean, and delivered fresh.</p>
+          <div class="hero__ctas">
+            <a class="btn btn--primary" href="#shop">Shop Fresh</a>
+            <a class="btn btn--ghost" href="#contact">Confirm Inventory</a>
+          </div>
+          <ul class="proof-points" aria-label="Key benefits">
+            <li class="badge">Harvested within 24–48 hours</li>
+            <li class="badge">Locally grown</li>
+            <li class="badge">Sustainably cultivated</li>
+          </ul>
+        </div>
+        <aside class="hero__image">
+          <picture>
+            <!-- Optional: add a WEBP alongside your PNG later -->
+            <img src="../assets/images/LMGROWBLOCK.png" alt="Lion’s Mane grow block" loading="eager" width="640" height="640" />
+          </picture>
+        </aside>
       </div>
     </section>
 
-    <!-- Cultivation Section -->
-    <section class="section fade-section" id="cultivation" aria-labelledby="cultivation-title">
-      <h2 id="cultivation-title" class="shiny-text">My products and cultivation process</h2>
-      <div class="cultivation-content">
-        <!-- Lion's Mane Fruiting Block Image -->
-        <img src="assets/images/LMGROWBLOCK.png" alt="Lion's Mane Fruiting Block">
-        <div class="text">
-          <p>
-            My cultivation process helps yield one result: <strong>affordable, quality supplements and fresh mushrooms for the customer.</strong> The products you buy from me should be superior to anything else online as well as effective for whatever purpose you need them.
-          </p>
-          <p>
-            Every mushroom I grow is carefully monitored from culture to harvest, using proven techniques that maximize both active compounds and nutritional value. Currently, I have <strong>lion’s mane pills</strong> and <strong>dried lion’s mane</strong> in stock; please contact me for additional product inquiries.
-          </p>
-          <p>
-            I source only the finest growing materials and maintain optimal growing conditions to ensure consistent results batch after batch.
-          </p>
+    <!-- Shop -->
+    <section id="shop" class="section" aria-labelledby="shop-title">
+      <div class="container">
+        <h2 id="shop-title">Shop</h2>
+        <p class="section-intro">
+          I currently offer lion’s mane products. Fresh availability varies by harvest—please
+          <a href="mailto:mushroomsmedium@gmail.com?subject=Inventory%20Check%20-%20Lion%27s%20Mane">email</a>
+          or <a href="tel:+18652559752">call</a> to confirm before ordering.
+        </p>
+
+        <div class="grid cards">
+          <article class="card product">
+            <header class="card__header">
+              <h3 class="card__title">Lion’s Mane Tincture</h3>
+              <span class="badge badge--accent">House-made</span>
+            </header>
+            <figure class="card__media">
+              <img src="../assets/images/MMLOGO.jpg" alt="Lion’s Mane tincture placeholder image" loading="lazy" />
+            </figure>
+            <div class="card__body">
+              <p>Dual-extracted lion’s mane tincture. Contact for current batch details.</p>
+            </div>
+            <footer class="card__footer">
+              <!-- Replace with external checkout link when ready -->
+              <a class="btn btn--primary" href="mailto:mushroomsmedium@gmail.com?subject=Order%20Request%20-%20Lion%27s%20Mane%20Tincture">Request to Buy</a>
+            </footer>
+          </article>
+
+          <article class="card product">
+            <header class="card__header">
+              <h3 class="card__title">Dried Lion’s Mane</h3>
+              <span class="badge">Shelf-stable</span>
+            </header>
+            <figure class="card__media">
+              <img src="../assets/images/MMLOGO.jpg" alt="Dried lion’s mane placeholder image" loading="lazy" />
+            </figure>
+            <div class="card__body">
+              <p>Dehydrated lion’s mane pieces. Great for soups, broths, and sautés.</p>
+            </div>
+            <footer class="card__footer">
+              <a class="btn btn--primary" href="mailto:mushroomsmedium@gmail.com?subject=Order%20Request%20-%20Dried%20Lion%27s%20Mane">Request to Buy</a>
+            </footer>
+          </article>
+
+          <article class="card product">
+            <header class="card__header">
+              <h3 class="card__title">Fresh Lion’s Mane</h3>
+              <span class="badge badge--warning">Varies by harvest</span>
+            </header>
+            <figure class="card__media on-white">
+              <img src="../assets/images/LMGROWBLOCK.png" alt="Fresh lion’s mane cluster" loading="lazy" />
+            </figure>
+            <div class="card__body">
+              <p>Fresh clusters when available. Best seared or roasted; meaty texture.</p>
+            </div>
+            <footer class="card__footer">
+              <a class="btn btn--ghost" href="mailto:mushroomsmedium@gmail.com?subject=Fresh%20Lion%27s%20Mane%20Availability">Check Availability</a>
+              <a class="btn btn--ghost" href="tel:+18652559752">Call 865‑255‑9752</a>
+            </footer>
+          </article>
+        </div>
+
+        <!-- Availability table (example) -->
+        <div class="availability">
+          <h3>Typical Availability</h3>
+          <div class="table-scroll">
+            <table>
+              <caption class="visually-hidden">Typical weekly availability by product</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Product</th>
+                  <th scope="col">Mon</th>
+                  <th scope="col">Wed</th>
+                  <th scope="col">Fri</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Tincture</th>
+                  <td>In stock</td>
+                  <td>In stock</td>
+                  <td>In stock</td>
+                </tr>
+                <tr>
+                  <th scope="row">Dried</th>
+                  <td>In stock</td>
+                  <td>In stock</td>
+                  <td>In stock</td>
+                </tr>
+                <tr>
+                  <th scope="row">Fresh Lion’s Mane</th>
+                  <td>Harvest‑dependent</td>
+                  <td>Harvest‑dependent</td>
+                  <td>Harvest‑dependent</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="fine-print">Note: Availability varies. Always contact to confirm.</p>
         </div>
       </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact fade-section" id="contact" aria-labelledby="contact-title">
-      <h2 id="contact-title">Get in Touch</h2>
-      <div class="contact-info">
-        <p>📧 Email: <a href="mailto:mushroomsmedium@gmail.com">mushroomsmedium@gmail.com</a></p>
-        <p>📞 Phone: <a href="tel:+18652559752">865-255-9752</a></p>
+    <!-- Gallery -->
+    <section id="gallery" class="section" aria-labelledby="gallery-title">
+      <div class="container">
+        <h2 id="gallery-title">Gallery</h2>
+        <p class="section-intro">Clean, neutral backgrounds to highlight texture and quality.</p>
+
+        <div class="grid gallery">
+          <figure class="gallery__item">
+            <img src="../assets/images/LMGROWBLOCK.png" alt="Lion’s Mane grow block on neutral background" loading="lazy" />
+            <figcaption>LM grow block (production)</figcaption>
+          </figure>
+          <!-- Duplicate if you add more images later -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick facts: Lion's Mane -->
+    <section class="section" aria-labelledby="facts-title">
+      <div class="container">
+        <h2 id="facts-title">Lion’s Mane — Quick Facts</h2>
+        <div class="facts">
+          <dl>
+            <div>
+              <dt>Species</dt>
+              <dd><em>Hericium erinaceus</em></dd>
+            </div>
+            <div>
+              <dt>Flavor</dt>
+              <dd>Delicate, slightly sweet; often compared to seafood (crab/lobster).</dd>
+            </div>
+            <div>
+              <dt>Texture</dt>
+              <dd>Tender yet meaty; strands pull apart.</dd>
+            </div>
+            <div>
+              <dt>Best Uses</dt>
+              <dd>Seared “steaks,” pan‑fried with butter, shredded for tacos, in soups.</dd>
+            </div>
+            <div>
+              <dt>Typical Pack Size</dt>
+              <dd>Commonly sold in ~½ lb increments; actual weight varies by harvest.</dd>
+            </div>
+            <div>
+              <dt>Harvest Window</dt>
+              <dd>Harvest‑dependent; contact to confirm weekly availability.</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- Learn -->
+    <section id="learn" class="section" aria-labelledby="learn-title">
+      <div class="container">
+        <h2 id="learn-title">Species Guide</h2>
+        <div class="grid cards">
+          <article class="card">
+            <header class="card__header">
+              <h3 class="card__title">Lion’s Mane</h3>
+            </header>
+            <figure class="card__media on-white">
+              <img src="../assets/images/LMGROWBLOCK.png" alt="Lion’s Mane cluster close‑up" loading="lazy" />
+            </figure>
+            <div class="card__body">
+              <ul class="list">
+                <li><strong>Taste/Texture:</strong> Delicate, meaty strands.</li>
+                <li><strong>Cooking:</strong> Sear in butter/oil until deeply golden; salt at the end.</li>
+                <li><strong>Nutrition:</strong> Low‑calorie, source of fiber and protein.</li>
+                <li><strong>Seasonality:</strong> Cultivated year‑round; supply varies by harvest.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="card">
+            <header class="card__header">
+              <h3 class="card__title">Oyster (Blue/White)</h3>
+            </header>
+            <figure class="card__media">
+              <img src="../assets/images/MMLOGO.jpg" alt="Oyster mushroom placeholder image" loading="lazy" />
+            </figure>
+            <div class="card__body">
+              <ul class="list">
+                <li><strong>Taste/Texture:</strong> Mild, silky.</li>
+                <li><strong>Cooking:</strong> Quick sauté; great in stir‑fries.</li>
+                <li><strong>Nutrition:</strong> Fiber, B‑vitamins.</li>
+                <li><strong>Availability:</strong> Contact to request.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="card">
+            <header class="card__header">
+              <h3 class="card__title">Shiitake</h3>
+            </header>
+            <figure class="card__media">
+              <img src="../assets/images/MMLOGO.jpg" alt="Shiitake mushroom placeholder image" loading="lazy" />
+            </figure>
+            <div class="card__body">
+              <ul class="list">
+                <li><strong>Taste/Texture:</strong> Savory, robust.</li>
+                <li><strong>Cooking:</strong> Sauté, roast, broths.</li>
+                <li><strong>Nutrition:</strong> Fiber, minerals.</li>
+                <li><strong>Availability:</strong> Contact to request.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Storage & Safety -->
+    <section class="section" aria-labelledby="care-title">
+      <div class="container">
+        <h2 id="care-title">Storage, Shelf Life & Safety</h2>
+
+        <div class="grid two">
+          <article class="card">
+            <header class="card__header">
+              <h3 class="card__title">Storage & Shelf Life (Lion’s Mane)</h3>
+            </header>
+            <div class="card__body">
+              <ul class="list">
+                <li>Refrigerate unwashed in a paper bag; avoid sealed plastic.</li>
+                <li>Use within 3–5 days for best texture and flavor.</li>
+                <li>To dry: slice into even pieces and dehydrate until crisp; store airtight.</li>
+                <li>To rehydrate: soak in warm water or broth 15–20 minutes, then cook.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="card">
+            <header class="card__header">
+              <h3 class="card__title">Safety & Disclaimers</h3>
+            </header>
+            <div class="card__body">
+              <ul class="list">
+                <li>Cook thoroughly before eating for best flavor and digestibility.</li>
+                <li>Do not consume if you have a known mushroom allergy or sensitivity.</li>
+                <li>Products are cultivated species only—no foraging identification provided.</li>
+                <li>No medical claims; consult a professional if you have health questions.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact / Pre-order -->
+    <section id="contact" class="section" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 id="contact-title">Contact & Pre‑Order</h2>
+        <div class="grid two">
+          <aside class="contact-block">
+            <p><strong>Email:</strong> <a href="mailto:mushroomsmedium@gmail.com">mushroomsmedium@gmail.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+18652559752">865‑255‑9752</a></p>
+            <p class="fine-print">For fastest response, include product, quantity, and pickup/delivery preference.</p>
+          </aside>
+
+          <form class="card form" action="https://formspree.io/f/your-id" method="POST">
+            <header class="card__header">
+              <h3 class="card__title">Simple Pre‑Order</h3>
+            </header>
+            <div class="card__body form__grid">
+              <label>
+                <span>Product</span>
+                <select name="product" required>
+                  <option value="Lion's Mane Tincture">Lion’s Mane Tincture</option>
+                  <option value="Dried Lion's Mane">Dried Lion’s Mane</option>
+                  <option value="Fresh Lion's Mane">Fresh Lion’s Mane (check availability)</option>
+                </select>
+              </label>
+              <label>
+                <span>Quantity</span>
+                <input type="text" name="quantity" placeholder="e.g., 1 bottle, 2 packs, 1 lb" required />
+              </label>
+              <label>
+                <span>Preferred pickup/delivery window</span>
+                <input type="text" name="window" placeholder="e.g., Fri afternoon" />
+              </label>
+              <label>
+                <span>Your name</span>
+                <input type="text" name="name" required />
+              </label>
+              <label>
+                <span>Email</span>
+                <input type="email" name="email" required />
+              </label>
+              <label>
+                <span>Phone</span>
+                <input type="tel" name="phone" />
+              </label>
+              <label class="full">
+                <span>Notes</span>
+                <textarea name="notes" rows="3" placeholder="Any allergies, special requests, or questions"></textarea>
+              </label>
+            </div>
+            <footer class="card__footer">
+              <button class="btn btn--primary" type="submit">Send Pre‑Order</button>
+              <p class="fine-print">No payment collected here. We’ll confirm inventory and next steps by email or phone.</p>
+            </footer>
+          </form>
+        </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer Section -->
-  <footer role="contentinfo">
-    <p>&copy; 2025 Mushrooms' Medium. All Rights Reserved.</p>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="../assets/images/MMLOGO.jpg" class="brand__logo" alt="Mushrooms’ Medium logo" />
+        <p class="footer-tagline">Fresh, local, and thoughtfully cultivated.</p>
+      </div>
+
+      <div class="footer-contact">
+        <h3 class="footer-title">Contact</h3>
+        <ul>
+          <li><a href="mailto:mushroomsmedium@gmail.com">mushroomsmedium@gmail.com</a></li>
+          <li><a href="tel:+18652559752">865‑255‑9752</a></li>
+        </ul>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer">
+        <h3 class="footer-title">Navigate</h3>
+        <ul>
+          <li><a href="#shop">Shop</a></li>
+          <li><a href="#learn">Learn</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; <span id="year">2025</span> Mushrooms’ Medium</p>
+    </div>
   </footer>
 
-  <script>
-    // Function to check if an element is in the viewport
-    function isInViewport(element) {
-      const rect = element.getBoundingClientRect();
-      return (
-        rect.top < window.innerHeight && rect.bottom > 0
-      );
+  <!-- Schema: LocalBusiness + Product -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Mushrooms’ Medium",
+    "url": "https://mushroomsmedium.github.io/products",
+    "email": "mushroomsmedium@gmail.com",
+    "telephone": "+1-865-255-9752",
+    "image": "https://mushroomsmedium.github.io/assets/images/MMLOGO.jpg"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Lion's Mane Mushroom — Fresh, Dried, Tincture",
+    "brand": "Mushrooms’ Medium",
+    "description": "Locally cultivated lion’s mane offerings. Fresh availability varies by harvest; contact to confirm.",
+    "image": "https://mushroomsmedium.github.io/assets/images/LMGROWBLOCK.png",
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/LimitedAvailability"
     }
-
-    // Function to handle scroll and reveal sections
-    function handleScroll() {
-      const sections = document.querySelectorAll('.fade-section');
-      sections.forEach((section) => {
-        if (isInViewport(section)) {
-          section.classList.add('visible');
-        }
-      });
-    }
-
-    // Event listeners for scroll and page load
-    window.addEventListener('scroll', handleScroll);
-    document.addEventListener('DOMContentLoaded', handleScroll);
+  }
   </script>
 </body>
 </html>
