@@ -13,47 +13,32 @@
   <meta property="og:description" content="Premium Lion’s Mane products. Fresh, dried, and tinctures." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://mushroomsmedium.github.io/products/" />
-  <meta property="og:image" content="https://mushroomsmedium.github.io/assets/images/LMGROWBLOCK.png" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/mushroomsmedium/mushroomsmedium.github.io/main/assets/images/LMGROWBLOCK.png" />
 
-  <!-- Inline CSS so the page cannot render unstyled -->
+  <!-- Inline CSS (dark, modern) -->
   <style>
-    /* ===== Base / Tokens ===== */
     *,*::before,*::after{box-sizing:border-box}
-    :root{
-      --bg:#0b0f12; --panel:#0f1418; --panel-2:#12181d;
-      --text:#e6edf3; --muted:#9aa7b2; --border:rgba(255,255,255,.08);
-      --accent:#0f766e; --accent-2:#22c55e; --amber:#f59e0b;
-      --radius:16px; --shadow:0 10px 30px rgba(0,0,0,.35), 0 1px 0 rgba(255,255,255,.02) inset;
-      --space-1:.25rem; --space-2:.5rem; --space-3:.75rem; --space-4:1rem; --space-5:1.5rem; --space-6:2rem; --space-7:3rem;
-      --max:1100px;
-    }
+    :root{--bg:#0b0f12;--panel:#0f1418;--panel-2:#12181d;--text:#e6edf3;--muted:#9aa7b2;
+      --border:rgba(255,255,255,.08);--accent:#0f766e;--accent-2:#22c55e;--amber:#f59e0b;
+      --radius:16px;--shadow:0 10px 30px rgba(0,0,0,.35),0 1px 0 rgba(255,255,255,.02) inset;
+      --space-1:.25rem;--space-2:.5rem;--space-3:.75rem;--space-4:1rem;--space-5:1.5rem;--space-6:2rem;--space-7:3rem;--max:1100px}
     html{color-scheme:dark}
-    body{
-      margin:0; background:linear-gradient(180deg,#0a0f12 0%,#0f1418 40%,#0b0f12 100%);
-      color:var(--text);
-      font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Inter,Roboto,Arial,sans-serif;
-      line-height:1.6;
-    }
+    body{margin:0;background:linear-gradient(180deg,#0a0f12 0%,#0f1418 40%,#0b0f12 100%);color:var(--text);
+      font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Inter,Roboto,Arial,sans-serif;line-height:1.6}
     img,picture,svg,video{max-width:100%;display:block;height:auto}
-    a{color:var(--accent);text-decoration:none}
-    a:hover,a:focus-visible{text-decoration:underline}
+    a{color:var(--accent);text-decoration:none} a:hover,a:focus-visible{text-decoration:underline}
     .container{width:min(100%,var(--max));margin-inline:auto;padding-inline:clamp(1rem,2vw,1.25rem)}
     .lead{color:var(--muted);font-size:clamp(1.05rem,1vw+1rem,1.35rem)}
-    .section{padding-block:clamp(2rem,6vw,4rem)}
-    .section--tight{padding-block:clamp(1.5rem,4vw,3rem)}
-    .section h2{margin:0 0 .5rem 0;font-size:clamp(1.4rem,1vw+1.2rem,1.9rem)}
-    .section-intro{color:var(--muted);margin-bottom:var(--space-5)}
-    .grid{display:grid;gap:var(--space-5)}
-    .grid.two{grid-template-columns:1fr}
+    .section{padding-block:clamp(2rem,6vw,4rem)} .section--tight{padding-block:clamp(1.5rem,4vw,3rem)}
+    .section h2{margin:0 0 .5rem;font-size:clamp(1.4rem,1vw+1.2rem,1.9rem)} .section-intro{color:var(--muted);margin-bottom:var(--space-5)}
+    .grid{display:grid;gap:var(--space-5)} .grid.two{grid-template-columns:1fr}
     @media(min-width:860px){.grid.two{grid-template-columns:1fr 1fr}}
-    .list{padding-left:1.1rem}.list li{margin-bottom:.4rem}
+    .list{padding-left:1.1rem} .list li{margin-bottom:.4rem}
     .visually-hidden{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 
-    /* ===== Header ===== */
-    .site-header{
-      position:sticky;top:0;z-index:20;border-bottom:1px solid var(--border);
-      background:rgba(12,16,19,.6);backdrop-filter:saturate(140%) blur(12px)
-    }
+    /* Header */
+    .site-header{position:sticky;top:0;z-index:20;border-bottom:1px solid var(--border);
+      background:rgba(12,16,19,.6);backdrop-filter:saturate(140%) blur(12px)}
     .header-inner{display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:var(--space-4);padding-block:.7rem}
     .brand{display:inline-flex;align-items:center;gap:.6rem;color:var(--text);font-weight:700}
     .brand__logo{width:40px;height:40px;border-radius:12px;object-fit:cover}
@@ -67,34 +52,22 @@
     .btn--ghost:hover{background:rgba(255,255,255,.04)}
     .chip{display:inline-flex;align-items:center;padding:.4rem .7rem;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid var(--border);font-weight:600;color:#cfe7e3}
 
-    /* ===== Hero ===== */
+    /* Hero */
     .hero{position:relative;isolation:isolate}
-    .hero__bg{
-      position:absolute;inset:0;
-      background:url("https://mushroomsmedium.github.io/assets/images/MMBACKGROUND.png") center/cover no-repeat;
-      filter:brightness(.45) saturate(110%);z-index:-2
-    }
-    .hero--edge::after{
-      content:"";position:absolute;inset:auto 0 -1px 0;height:120px;
-      background:linear-gradient(180deg,rgba(11,15,18,0) 0%,rgba(11,15,18,1) 100%);z-index:-1
-    }
+    .hero__bg{position:absolute;inset:0;background:url("https://raw.githubusercontent.com/mushroomsmedium/mushroomsmedium.github.io/main/assets/images/MMBACKGROUND.png") center/cover no-repeat;
+      filter:brightness(.45) saturate(110%);z-index:-2}
+    .hero--edge::after{content:"";position:absolute;inset:auto 0 -1px 0;height:120px;background:linear-gradient(180deg,rgba(11,15,18,0) 0%,rgba(11,15,18,1) 100%);z-index:-1}
     .hero__content{display:grid;gap:var(--space-7);grid-template-columns:1fr;align-items:center;padding-block:clamp(2rem,8vw,6rem)}
     @media(min-width:940px){.hero__content{grid-template-columns:1.15fr .85fr}}
-    .hero__text h1{margin:0 0 .25rem 0;font-size:clamp(1.8rem,1.5vw+1.4rem,2.4rem);letter-spacing:.2px}
+    .hero__text h1{margin:0 0 .25rem;font-size:clamp(1.8rem,1.5vw+1.4rem,2.4rem);letter-spacing:.2px}
     .hero__ctas{display:flex;gap:.8rem;margin-block:var(--space-4)}
     .proof{display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:var(--space-4) 0 0 0;list-style:none}
-    .product-hero{
-      background:linear-gradient(180deg,#12242a 0%,#0e151a 100%);
-      border:1px solid var(--border);border-radius:24px;padding:1rem;box-shadow:var(--shadow)
-    }
+    .product-hero{background:linear-gradient(180deg,#12242a 0%,#0e151a 100%);border:1px solid var(--border);border-radius:24px;padding:1rem;box-shadow:var(--shadow)}
 
-    /* ===== Shop / Cards ===== */
+    /* Shop / Cards */
     .shop-grid{grid-template-columns:1fr}
     @media(min-width:920px){.shop-grid{grid-template-columns:repeat(3,1fr)}}
-    .card{
-      background:linear-gradient(180deg,var(--panel) 0%,var(--panel-2) 100%);
-      border:1px solid var(--border);border-radius:20px;box-shadow:var(--shadow);display:flex;flex-direction:column;overflow:hidden
-    }
+    .card{background:linear-gradient(180deg,var(--panel) 0%,var(--panel-2) 100%);border:1px solid var(--border);border-radius:20px;box-shadow:var(--shadow);display:flex;flex-direction:column;overflow:hidden}
     .card__header{padding:1.1rem 1.1rem .6rem 1.1rem}
     .card__title{margin:0;font-size:1.15rem}
     .card__media{border-block:1px solid var(--border);background:#0c1114}
@@ -111,24 +84,24 @@
       linear-gradient(180deg,#0f1418 0%, #0b0f12 100%)
     }
 
-    /* ===== Facts ===== */
+    /* Facts */
     .facts{display:grid;gap:1rem;grid-template-columns:1fr}
     @media(min-width:860px){.facts{grid-template-columns:repeat(3,1fr)}}
     .fact{padding:1rem 1.1rem;border:1px solid var(--border);border-radius:16px;background:linear-gradient(180deg,var(--panel) 0%,var(--panel-2) 100%);box-shadow:var(--shadow)}
-    .fact h3{margin:.1rem 0 .25rem 0;font-size:1rem}
+    .fact h3{margin:.1rem 0 .25rem;font-size:1rem}
     .fact p{margin:.25rem 0 0 0;color:var(--muted)}
 
-    /* ===== Gallery ===== */
+    /* Gallery */
     .gallery{grid-template-columns:1fr}
     @media(min-width:760px){.gallery{grid-template-columns:repeat(2,1fr)}}
     .gallery__item{border:1px solid var(--border);border-radius:20px;overflow:hidden;background:#0c1114;box-shadow:var(--shadow)}
     .gallery__item img{aspect-ratio:4/3;object-fit:cover}
 
-    /* ===== Contact CTA ===== */
+    /* Contact */
     .contact-cta{display:grid;gap:1rem;justify-items:center;text-align:center}
     .cta-buttons{display:flex;gap:.8rem;flex-wrap:wrap;justify-content:center}
 
-    /* ===== Footer ===== */
+    /* Footer */
     .site-footer{background:#0a0d10}
     .footer-inner{display:grid;gap:var(--space-6);grid-template-columns:1fr;align-items:start;padding-block:2rem}
     .footer-brand{display:grid;gap:.5rem}
@@ -137,7 +110,7 @@
     .footer-bottom{border-top:1px solid var(--border);text-align:center;color:#7f8a94;padding:.9rem 1rem}
     @media(min-width:860px){.footer-inner{grid-template-columns:1.2fr .6fr .6fr}}
 
-    /* ===== A11y & Motion ===== */
+    /* A11y */
     .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
     .skip-link:focus{left:1rem;top:1rem;width:auto;height:auto;background:#000;color:#fff;padding:.5rem .75rem;border-radius:8px}
     :focus-visible{outline:3px solid #94c5fd;outline-offset:2px}
@@ -150,8 +123,8 @@
 
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="./" aria-label="Mushrooms’ Medium home">
-        <img src="https://mushroomsmedium.github.io/assets/images/MMLOGO.jpg" alt="Mushrooms’ Medium logo" class="brand__logo" decoding="async" />
+      <a class="brand" href="../" aria-label="Mushrooms’ Medium home">
+        <img src="https://raw.githubusercontent.com/mushroomsmedium/mushroomsmedium.github.io/main/assets/images/MMLOGO.jpg" alt="Mushrooms’ Medium logo" class="brand__logo" decoding="async" />
         <span class="brand__name">Mushrooms’ Medium</span>
       </a>
 
@@ -190,7 +163,7 @@
 
         <aside class="hero__visual">
           <figure class="product-hero">
-            <img src="https://mushroomsmedium.github.io/assets/images/LMGROWBLOCK.png" alt="Lion’s Mane grow block close‑up" width="720" height="720" loading="eager" decoding="async" />
+            <img src="https://raw.githubusercontent.com/mushroomsmedium/mushroomsmedium.github.io/main/assets/images/LMGROWBLOCK.png" alt="Lion’s Mane grow block close‑up" width="720" height="720" loading="eager" decoding="async" />
           </figure>
         </aside>
       </div>
@@ -209,11 +182,9 @@
               <span class="pill pill--amber">Harvest‑dependent</span>
             </header>
             <figure class="card__media on-white">
-              <img src="https://mushroomsmedium.github.io/assets/images/LMGROWBLOCK.png" alt="Fresh Lion’s Mane cluster on white background" loading="lazy" decoding="async" />
+              <img src="https://raw.githubusercontent.com/mushroomsmedium/mushroomsmedium.github.io/main/assets/images/LMGROWBLOCK.png" alt="Fresh Lion’s Mane cluster on white background" loading="lazy" decoding="async" />
             </figure>
-            <div class="card__body">
-              <p>Meaty strands that sear beautifully—ideal for “steaks,” tacos, and soups.</p>
-            </div>
+            <div class="card__body"><p>Meaty strands that sear beautifully—ideal for “steaks,” tacos, and soups.</p></div>
             <footer class="card__footer">
               <a class="btn btn--ghost" href="mailto:mushroomsmedium@gmail.com?subject=Fresh%20Lion%27s%20Mane%20Availability">Email to confirm</a>
               <a class="btn btn--ghost" href="tel:+18652559752">Call 865‑255‑9752</a>
@@ -226,9 +197,7 @@
               <span class="pill">Shelf‑stable</span>
             </header>
             <div class="card__media gradient-thumb" role="img" aria-label="Dried Lion’s Mane product"></div>
-            <div class="card__body">
-              <p>Clean, even dehydration for rich broths and sautés. Rehydrate and cook until golden.</p>
-            </div>
+            <div class="card__body"><p>Clean, even dehydration for rich broths and sautés. Rehydrate and cook until golden.</p></div>
             <footer class="card__footer">
               <a class="btn btn--primary" href="mailto:mushroomsmedium@gmail.com?subject=Order%20Request%20-%20Dried%20Lion%27s%20Mane">Email to order</a>
             </footer>
@@ -240,9 +209,7 @@
               <span class="pill pill--accent">House‑made</span>
             </header>
             <div class="card__media gradient-thumb" role="img" aria-label="Lion’s Mane tincture product"></div>
-            <div class="card__body">
-              <p>Small‑batch dual extraction. Contact for current batch details and pricing.</p>
-            </div>
+            <div class="card__body"><p>Small‑batch dual extraction. Contact for current batch details and pricing.</p></div>
             <footer class="card__footer">
               <a class="btn btn--primary" href="mailto:mushroomsmedium@gmail.com?subject=Order%20Request%20-%20Lion%27s%20Mane%20Tincture">Email to order</a>
             </footer>
@@ -251,7 +218,7 @@
       </div>
     </section>
 
-    <!-- LEARN — Lion's Mane only -->
+    <!-- LEARN -->
     <section id="learn" class="section" aria-labelledby="learn-title">
       <div class="container">
         <h2 id="learn-title">Lion’s Mane Guide</h2>
@@ -299,7 +266,7 @@
         <h2 id="gallery-title">Gallery</h2>
         <div class="grid gallery">
           <figure class="gallery__item">
-            <img src="https://mushroomsmedium.github.io/assets/images/LMGROWBLOCK.png" alt="Lion’s Mane on a neutral background" loading="lazy" decoding="async" />
+            <img src="https://raw.githubusercontent.com/mushroomsmedium/mushroomsmedium.github.io/main/assets/images/LMGROWBLOCK.png" alt="Lion’s Mane on a neutral background" loading="lazy" decoding="async" />
             <figcaption class="visually-hidden">LM grow block (production)</figcaption>
           </figure>
         </div>
@@ -322,7 +289,7 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <img src="https://mushroomsmedium.github.io/assets/images/MMLOGO.jpg" class="brand__logo" alt="Mushrooms’ Medium logo" decoding="async" />
+        <img src="https://raw.githubusercontent.com/mushroomsmedium/mushroomsmedium.github.io/main/assets/images/MMLOGO.jpg" class="brand__logo" alt="Mushrooms’ Medium logo" decoding="async" />
         <p class="footer-tagline">Lion’s Mane—fresh, focused, and carefully handled.</p>
       </div>
 
@@ -346,13 +313,5 @@
       <p>&copy; 2025 Mushrooms’ Medium</p>
     </div>
   </footer>
-
-  <!-- Schema: LocalBusiness + Product -->
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"LocalBusiness","name":"Mushrooms’ Medium","url":"https://mushroomsmedium.github.io/products","email":"mushroomsmedium@gmail.com","telephone":"+1-865-255-9752","image":"https://mushroomsmedium.github.io/assets/images/LMGROWBLOCK.png"}
-  </script>
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Product","name":"Lion's Mane (Fresh, Dried, Tincture)","brand":"Mushrooms’ Medium","image":"https://mushroomsmedium.github.io/assets/images/LMGROWBLOCK.png","description":"Lion’s Mane only. Fresh availability varies; contact to confirm."}
-  </script>
 </body>
 </html>
