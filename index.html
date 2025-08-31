@@ -315,3 +315,167 @@
   </footer>
 </body>
 </html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mushrooms’ Medium — Lion’s Mane</title>
+  <meta name="description" content="Lion’s Mane only — fresh (harvest dependent), dried, and tinctures. Harvested within 24–48 hours. Contact to confirm inventory." />
+  <link rel="canonical" href="https://mushroomsmedium.github.io/products/" />
+  <meta name="theme-color" content="#0f766e" />
+  <style>
+    /* inline CSS kept short here, same visuals as before */
+    *,*::before,*::after{box-sizing:border-box}
+    :root{--bg:#0b0f12;--panel:#0f1418;--panel-2:#12181d;--text:#e6edf3;--muted:#9aa7b2;--border:rgba(255,255,255,.08);
+      --accent:#0f766e;--accent-2:#22c55e;--radius:16px;--max:1100px}
+    html{color-scheme:dark}
+    body{margin:0;background:linear-gradient(180deg,#0a0f12 0%,#0f1418 40%,#0b0f12 100%);color:var(--text);
+      font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Inter,Roboto,Arial,sans-serif;line-height:1.6}
+    img{max-width:100%;display:block;height:auto}
+    a{color:var(--accent);text-decoration:none}
+    .container{width:min(100%,var(--max));margin:auto;padding-inline:1.25rem}
+    .site-header{position:sticky;top:0;z-index:10;border-bottom:1px solid var(--border);
+      background:rgba(12,16,19,.6);backdrop-filter:saturate(140%) blur(12px)}
+    .header-inner{display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:1rem;padding:.7rem 0}
+    .brand{display:inline-flex;align-items:center;gap:.6rem;color:var(--text);font-weight:700}
+    .brand__logo{width:40px;height:40px;border-radius:12px;object-fit:cover}
+    .nav{display:flex;gap:1rem;list-style:none;margin:0;padding:0}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1.1rem;border-radius:999px;border:1px solid var(--border)}
+    .btn--primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#081012;border:0}
+    .hero{position:relative;isolation:isolate}
+    .hero__bg{position:absolute;inset:0;background:url("/assets/images/MMBACKGROUND.png") center/cover no-repeat;filter:brightness(.45);z-index:-1}
+    .hero__content{display:grid;gap:3rem;grid-template-columns:1fr;align-items:center;padding-block:clamp(2rem,8vw,6rem)}
+    @media(min-width:940px){.hero__content{grid-template-columns:1.15fr .85fr}}
+    .chip{display:inline-flex;padding:.4rem .7rem;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid var(--border)}
+    .card{background:linear-gradient(180deg,var(--panel) 0%,var(--panel-2) 100%);border:1px solid var(--border);border-radius:20px;overflow:hidden}
+    .card__media{border-block:1px solid var(--border);background:#0c1114}
+    .card__media img{aspect-ratio:4/3;object-fit:cover;border-radius:16px;margin:12px}
+    .grid{display:grid;gap:1rem}
+    @media(min-width:920px){.shop-grid{grid-template-columns:repeat(3,1fr)}}
+    .section{padding-block:clamp(2rem,6vw,4rem)}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/" aria-label="Mushrooms’ Medium home">
+        <img class="brand__logo" src="/assets/images/MMLOGO.jpg" alt="Mushrooms’ Medium logo" />
+        <span>Mushrooms’ Medium</span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav">
+          <li><a href="#shop">Shop</a></li>
+          <li><a href="#learn">Learn</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="#shop" class="btn btn--primary">Shop Fresh</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="container hero__content">
+        <div>
+          <h1 id="hero-title">Lion’s Mane, done right.</h1>
+          <p>Cleanly cultivated. Harvested fast. Served with care.</p>
+          <div class="grid" style="grid-auto-flow:column;gap:.8rem;justify-content:start">
+            <a class="btn btn--primary" href="#shop">Shop Lion’s Mane</a>
+            <a class="btn" href="#contact">Confirm Inventory</a>
+          </div>
+          <div class="grid" style="grid-auto-flow:column;gap:.5rem;justify-content:start;margin-top:.75rem">
+            <span class="chip">Harvested within 24–48 hours</span>
+            <span class="chip">Locally grown</span>
+            <span class="chip">Sustainably cultivated</span>
+          </div>
+        </div>
+        <figure class="card" style="padding:1rem">
+          <img src="/assets/images/LMGROWBLOCK.png" alt="Lion’s Mane grow block close‑up" width="720" height="720" />
+        </figure>
+      </div>
+    </section>
+
+    <section id="shop" class="section">
+      <div class="container">
+        <h2>Shop Lion’s Mane</h2>
+        <p>Fresh availability varies. Email or call to confirm before purchasing.</p>
+        <div class="grid shop-grid">
+          <article class="card">
+            <div class="card__media"><img src="/assets/images/LMGROWBLOCK.png" alt="Fresh Lion’s Mane cluster on white background"></div>
+            <div style="padding:1rem">
+              <h3>Fresh Lion’s Mane <span class="chip" style="margin-left:.5rem">Harvest‑dependent</span></h3>
+              <p>Meaty strands that sear beautifully—ideal for “steaks,” tacos, and soups.</p>
+              <div class="grid" style="grid-auto-flow:column;gap:.6rem;justify-content:start">
+                <a class="btn" href="mailto:mushroomsmedium@gmail.com?subject=Fresh%20Lion%27s%20Mane%20Availability">Email to confirm</a>
+                <a class="btn" href="tel:+18652559752">Call 865‑255‑9752</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__media"><img src="/assets/images/LMGROWBLOCK.png" alt="Dried Lion’s Mane (placeholder image)"></div>
+            <div style="padding:1rem">
+              <h3>Dried Lion’s Mane</h3>
+              <p>Clean, even dehydration for rich broths and sautés. Rehydrate and cook until golden.</p>
+              <a class="btn btn--primary" href="mailto:mushroomsmedium@gmail.com?subject=Order%20Request%20-%20Dried%20Lion%27s%20Mane">Email to order</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__media"><img src="/assets/images/LMGROWBLOCK.png" alt="Lion’s Mane tincture (placeholder image)"></div>
+            <div style="padding:1rem">
+              <h3>Lion’s Mane Tincture <span class="chip" style="margin-left:.5rem">House‑made</span></h3>
+              <p>Small‑batch dual extraction. Contact for current batch details and pricing.</p>
+              <a class="btn btn--primary" href="mailto:mushroomsmedium@gmail.com?subject=Order%20Request%20-%20Lion%27s%20Mane%20Tincture">Email to order</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="learn" class="section">
+      <div class="container">
+        <h2>Lion’s Mane Guide</h2>
+        <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem">
+          <div class="card" style="padding:1rem"><h3>Species</h3><p><em>Hericium erinaceus</em></p></div>
+          <div class="card" style="padding:1rem"><h3>Flavor</h3><p>Delicate, slightly sweet—often compared to crab or lobster.</p></div>
+          <div class="card" style="padding:1rem"><h3>Texture</h3><p>Tender, pull‑apart strands with a satisfying bite when seared.</p></div>
+          <div class="card" style="padding:1rem"><h3>Best Uses</h3><p>Pan‑seared “steaks,” shredded tacos, ramen, creamy pastas, soups.</p></div>
+          <div class="card" style="padding:1rem"><h3>Typical Pack</h3><p>Sold in ~½ lb increments; actual weight varies by harvest.</p></div>
+          <div class="card" style="padding:1rem"><h3>Harvest Window</h3><p>Year‑round cultivation; fresh supply varies weekly—contact to confirm.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container" style="text-align:center">
+        <h2>Ready when you are</h2>
+        <p>Quickest way to confirm fresh inventory or place an order:</p>
+        <div style="display:inline-flex;gap:.8rem;flex-wrap:wrap;justify-content:center">
+          <a class="btn btn--primary" href="mailto:mushroomsmedium@gmail.com">mushroomsmedium@gmail.com</a>
+          <a class="btn" href="tel:+18652559752">865‑255‑9752</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-header" style="border-top:1px solid var(--border);border-bottom:none;background:#0a0d10">
+    <div class="container header-inner" style="grid-template-columns:1fr auto">
+      <div class="brand">
+        <img class="brand__logo" src="/assets/images/MMLOGO.jpg" alt="Mushrooms’ Medium logo" />
+        <span>Mushrooms’ Medium</span>
+      </div>
+      <nav aria-label="Footer">
+        <ul class="nav">
+          <li><a href="#shop">Shop</a></li>
+          <li><a href="#learn">Learn</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="container" style="padding:.75rem 0;color:#9aa7b2">&copy; 2025 Mushrooms’ Medium</div>
+  </footer>
+</body>
+</html>
