@@ -1,0 +1,36 @@
+<!doctype html><meta charset="utf-8">
+<title>Image Path Debug</title>
+<style>body{font:16px/1.4 system-ui;padding:20px;max-width:900px;margin:auto} figure{margin:18px 0} img{max-width:360px;border:1px solid #ddd;border-radius:8px} code{background:#f5f5f5;padding:2px 6px;border-radius:6px}</style>
+
+<h1>Image Path Debug</h1>
+<p>If an image shows, that path form works. If not, it’s the wrong path/case.</p>
+
+<figure>
+  <figcaption>1) Site-absolute (recommended)</figcaption>
+  <code>/assets/images/LMGROWBLOCK.png</code><br>
+  <img src="/assets/images/LMGROWBLOCK.png" alt="">
+</figure>
+
+<figure>
+  <figcaption>2) Full domain</figcaption>
+  <code>https://mushroomsmedium.github.io/assets/images/LMGROWBLOCK.png</code><br>
+  <img src="https://mushroomsmedium.github.io/assets/images/LMGROWBLOCK.png" alt="">
+</figure>
+
+<figure>
+  <figcaption>3) Relative from root index.html</figcaption>
+  <code>assets/images/LMGROWBLOCK.png</code><br>
+  <img src="assets/images/LMGROWBLOCK.png" alt="">
+</figure>
+
+<figure>
+  <figcaption>4) Raw CDN</figcaption>
+  <code>https://raw.githubusercontent.com/mushroomsmedium/mushroomsmedium.github.io/main/assets/images/LMGROWBLOCK.png</code><br>
+  <img src="https://raw.githubusercontent.com/mushroomsmedium/mushroomsmedium.github.io/main/assets/images/LMGROWBLOCK.png" alt="">
+</figure>
+
+<figure>
+  <figcaption>5) Case mismatch test (should FAIL)</figcaption>
+  <code>/assets/images/lmgrowblock.png</code><br>
+  <img src="/assets/images/lmgrowblock.png" alt="">
+</figure>
