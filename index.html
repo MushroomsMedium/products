@@ -1,21 +1,20 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Basic -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mushrooms’ Medium — Lion’s Mane</title>
-  <meta name="description" content="Lion’s Mane only: fresh (harvest-dependent), dried, and tinctures. Harvested within 24–48 hours. Contact to confirm inventory." />
+  <meta name="description" content="Lion’s Mane only — fresh (harvest dependent), tinctures, and pills. Harvested within 24–48 hours. Contact to confirm inventory." />
   <link rel="canonical" href="https://mushroomsmedium.github.io/products/" />
-  <meta name="theme-color" content="#0f766e" />
+  <meta name="theme-color" content="#2f855a" />
 
-  <!-- EDIT HERE: Typography (Fraunces for display, Inter for UI). Remove or swap families as desired. -->
+  <!-- Typography (EDIT HERE if you want different fonts) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/products/assets/css/style.css?v=10" />
+  <link rel="stylesheet" href="/products/assets/css/style.css?v=11" />
 </head>
 
 <body>
@@ -24,7 +23,7 @@
   <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
-      <!-- EDIT HERE: Brand logo only (no text). The logo art contains the word mark. -->
+      <!-- Brand: logo only (your wordmark is the text) -->
       <a class="brand" href="/products/" aria-label="Mushrooms’ Medium home">
         <img class="brand__logo brand__logo--long" src="/products/assets/images/mmlogo.jpg" alt="Mushrooms’ Medium logo" width="3608" height="576" fetchpriority="high" />
       </a>
@@ -42,9 +41,9 @@
   </header>
 
   <main id="main">
-    <!-- HERO (layered: slim scenic banner + product focus) -->
+    <!-- HERO -->
     <section class="hero" aria-labelledby="hero-title">
-      <!-- EDIT HERE: Background band uses your ultra-wide mmbackground.jpg repeated horizontally without stretching. -->
+      <!-- Background band: repeats mmbackground.jpg horizontally without stretching -->
       <div class="hero__band" role="img" aria-label="Silhouetted morel yard"></div>
 
       <div class="container hero__content">
@@ -58,39 +57,37 @@
           </div>
 
           <ul class="proof" aria-label="Key guarantees">
-            <li class="chip">Harvested within 24–48 hours</li>
-            <li class="chip">Locally grown</li>
-            <li class="chip">Sustainably cultivated</li>
+            <li class="pill">Harvested within 24–48 hours</li>
+            <li class="pill">Locally grown</li>
+            <li class="pill">Sustainably cultivated</li>
           </ul>
         </div>
 
-        <!-- EDIT HERE: Main hero image (fresh LM). Frame ensures border fits the image perfectly. -->
+        <!-- Fresh LM hero image (4:3 frame; border hugs image) -->
         <figure class="media-frame ratio-4x3 hero__media" aria-label="Fresh Lion’s Mane close‑up">
           <img src="/products/assets/images/mmmushroom.jpg" alt="Fresh Lion’s Mane cluster" width="3133" height="2290" />
         </figure>
       </div>
     </section>
 
-    <!-- SHOP (Lion's Mane only) -->
+    <!-- SHOP -->
     <section id="shop" class="section" aria-labelledby="shop-title">
       <div class="container">
         <h2 id="shop-title">Shop Lion’s Mane</h2>
-        <p class="section-intro">
-          Fresh availability varies. Please email or call to confirm before purchasing.
-        </p>
+        <p class="section-intro">Fresh availability varies. Please email or call to confirm before purchasing.</p>
 
         <div class="grid cards">
-          <!-- Fresh -->
+          <!-- Fresh Lion’s Mane -->
           <article class="card product">
             <header class="card__header">
               <h3 class="card__title">Fresh Lion’s Mane</h3>
-              <span class="pill pill--amber">Harvest‑dependent</span>
+              <span class="pill">Harvest‑dependent</span>
             </header>
-            <!-- 4×3 suits 3133×2290; object-fit: cover prevents distortion; border fits image. -->
             <figure class="media-frame ratio-4x3">
               <img src="/products/assets/images/mmmushroom.jpg" alt="Fresh Lion’s Mane" width="3133" height="2290" loading="lazy" />
             </figure>
             <div class="card__body">
+              <p class="price"><strong>$25/lb</strong></p>
               <p>Meaty strands that sear beautifully—ideal for “steaks,” tacos, and soups.</p>
             </div>
             <footer class="card__footer">
@@ -99,33 +96,33 @@
             </footer>
           </article>
 
-          <!-- Dried -->
+          <!-- Lion’s Mane Pills (replaces Dried section) -->
           <article class="card product">
             <header class="card__header">
-              <h3 class="card__title">Dried Lion’s Mane</h3>
-              <span class="pill">Shelf‑stable</span>
+              <h3 class="card__title">Lion’s Mane Pills</h3>
+              <span class="pill">Capsules</span>
             </header>
-            <!-- Reuse LM photo until you shoot a dried product image; frame keeps look consistent. -->
-            <figure class="media-frame ratio-4x3">
-              <img src="/products/assets/images/mmmushroom.jpg" alt="Dried Lion’s Mane (illustrative)" width="3133" height="2290" loading="lazy" />
+            <!-- Portrait bottle: 3:4 frame -->
+            <figure class="media-frame ratio-3x4">
+              <!-- EDIT HERE: Change .jpg to .png if your file is PNG -->
+              <img src="/products/assets/images/mmpillbottle.jpg" alt="Lion’s Mane capsules bottle" width="1200" height="1600" loading="lazy" />
             </figure>
             <div class="card__body">
-              <p>Clean, even dehydration for rich broths and sautés. Rehydrate and cook until deeply golden.</p>
+              <p>Convenient capsules made with Lion’s Mane. Contact for batch details and pricing.</p>
             </div>
             <footer class="card__footer">
-              <a class="btn btn--primary" href="mailto:mushroomsmedium@gmail.com?subject=Order%20Request%20-%20Dried%20Lion%27s%20Mane">Email to order</a>
+              <a class="btn btn--primary" href="mailto:mushroomsmedium@gmail.com?subject=Order%20Request%20-%20Lion%27s%20Mane%20Pills">Email to order</a>
             </footer>
           </article>
 
-          <!-- Tincture (portrait image → 3×4 frame) -->
+          <!-- Tincture -->
           <article class="card product">
             <header class="card__header">
               <h3 class="card__title">Lion’s Mane Tincture</h3>
-              <span class="pill pill--accent">House‑made</span>
+              <span class="pill">House‑made</span>
             </header>
-            <!-- 3×4 suits 3024×3345; frame borders hug image; no stretching. -->
             <figure class="media-frame ratio-3x4">
-              <img src="/products/assets/images/mmtincture.jpg" alt="Lion’s Mane tincture bottle" width="3024" height="3345" loading="lazy" />
+              <img src="/products/assets/images/mmtincture.jpg" alt="Lion’s Mane tincture" width="3024" height="3345" loading="lazy" />
             </figure>
             <div class="card__body">
               <p>Small‑batch dual extraction. Contact for current batch details and pricing.</p>
@@ -142,6 +139,7 @@
     <section id="learn" class="section" aria-labelledby="learn-title">
       <div class="container">
         <h2 id="learn-title">Lion’s Mane Guide</h2>
+
         <div class="facts">
           <div class="fact"><h3>Species</h3><p><em>Hericium erinaceus</em></p></div>
           <div class="fact"><h3>Flavor</h3><p>Delicate, slightly sweet—often compared to crab or lobster.</p></div>
@@ -175,21 +173,6 @@
               </ul>
             </div>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- GALLERY -->
-    <section class="section" aria-labelledby="gallery-title">
-      <div class="container">
-        <h2 id="gallery-title">Gallery</h2>
-        <div class="grid gallery">
-          <figure class="media-frame ratio-4x3">
-            <img src="/products/assets/images/mmmushroom.jpg" alt="Lion’s Mane texture" width="3133" height="2290" loading="lazy" />
-          </figure>
-          <figure class="media-frame ratio-3x4">
-            <img src="/products/assets/images/mmtincture.jpg" alt="Lion’s Mane tincture" width="3024" height="3345" loading="lazy" />
-          </figure>
         </div>
       </div>
     </section>
