@@ -1,42 +1,47 @@
-/* ===========================
-   Mobile-first visual system
-   =========================== */
+/* ================
+   Mobile-first UI
+   Calmer green with blue accents (light theme)
+   ================ */
 
 /* Reset & tokens */
 *,*::before,*::after{box-sizing:border-box}
 :root{
-  /* Palette — quiet, natural, accessible (inspired by forest tones) */
-  --bg:#0b0f12;               /* deep charcoal evergreen */
-  --panel:#0f1418;            /* slightly lighter surface */
-  --panel-2:#12181d;
-  --text:#e6edf3;             /* soft white */
-  --muted:#a0acb7;            /* cool gray */
-  --border:rgba(255,255,255,.10);
+  /* Softer palette (accessible on light backgrounds) */
+  --bg:#f7faf9;          /* mint-white background */
+  --panel:#ffffff;       /* card surface */
+  --panel-2:#f3f6f8;     /* secondary surface */
+  --text:#0b0f12;        /* near-black text */
+  --muted:#475569;       /* cool gray text */
+  --border:#e5e7eb;      /* light border */
 
-  --accent:#0f766e;           /* teal */
-  --accent-2:#22c55e;         /* mint-green accent */
-  --amber:#f59e0b;            /* harvest accent */
+  --accent:#2f855a;      /* pleasant green */
+  --accent-2:#60a5fa;    /* blue accent */
+  --accent-strong:#2563eb;
 
   --radius:16px;
-  --radius-lg:24px;
-  --shadow:0 8px 30px rgba(0,0,0,.35), 0 1px 0 rgba(255,255,255,.02) inset;
+  --radius-lg:20px;
+  --shadow:0 6px 24px rgba(2,6,23,.08);
 
   --space-1:.25rem; --space-2:.5rem; --space-3:.75rem;
   --space-4:1rem; --space-5:1.5rem; --space-6:2rem; --space-7:3rem;
 
   --max:1100px;
 
-  --font-ui: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-ui:"Inter",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --font-display:"Fraunces",Georgia,"Times New Roman",serif;
 }
-html{color-scheme:dark}
+html{color-scheme:light}
 body{
   margin:0;
   font-family:var(--font-ui);
   line-height:1.6;
   color:var(--text);
-  background:linear-gradient(180deg,#0a0f12 0%,#0f1418 40%,#0b0f12 100%);
+  background:var(--bg);
 }
+
+img,picture,svg,video{max-width:100%;display:block;height:auto}
+a{color:var(--accent-strong);text-decoration:none}
+a:hover,a:focus-visible{text-decoration:underline}
 
 /* Layout helpers */
 .container{width:min(100%,var(--max));margin-inline:auto;padding-inline:clamp(1rem,2vw,1.25rem)}
@@ -50,13 +55,13 @@ body{
 .gallery{grid-template-columns:1fr}
 @media(min-width:760px){.gallery{grid-template-columns:repeat(2,1fr)}}
 .list{padding-left:1.1rem}
-.lead{color:var(--muted);font-size:clamp(1.05rem,1vw+1rem,1.35rem)}
+.lead{color:var(--muted);font-size:clamp(1.05rem,1vw+1rem,1.3rem)}
 .visually-hidden{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 
 /* Header & nav */
 .site-header{
   position:sticky;top:0;z-index:20;border-bottom:1px solid var(--border);
-  background:rgba(12,16,19,.6);backdrop-filter:saturate(140%) blur(12px)
+  background:rgba(255,255,255,.86);backdrop-filter:saturate(120%) blur(12px)
 }
 .header-inner{
   display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:var(--space-4);
@@ -65,43 +70,45 @@ body{
 .brand{display:inline-flex;align-items:center;gap:.6rem}
 .brand__logo{display:block;height:28px;width:auto;object-fit:contain}
 @media(min-width:900px){.brand__logo{height:36px}}
-.brand__logo--long{border-radius:8px} /* gentle rounding to integrate with glass header */
+.brand__logo--long{border-radius:6px}
 
 .nav{display:flex;gap:var(--space-4);list-style:none;margin:0;padding:0}
 .nav__link{padding:.45rem .25rem;border-radius:8px;color:var(--text)}
-.nav__link:focus-visible{outline:3px solid #94c5fd;outline-offset:2px}
+.nav__link:focus-visible{outline:3px solid #93c5fd;outline-offset:2px}
 
-/* Buttons, chips, pills */
+/* Buttons & labels */
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
-  padding:.75rem 1.1rem;border-radius:999px;border:1px solid transparent;
+  padding:.72rem 1.1rem;border-radius:999px;border:1px solid transparent;
   font-weight:650;cursor:pointer
 }
 .btn--primary{
   background:linear-gradient(135deg,var(--accent),var(--accent-2));
-  color:#081012;box-shadow:0 6px 20px rgba(34,197,94,.25)
+  color:#ffffff;border:0;box-shadow:0 6px 18px rgba(47,133,90,.25)
 }
-.btn--ghost{background:transparent;border-color:var(--border);color:var(--text)}
-.btn--ghost:hover{background:rgba(255,255,255,.05)}
-.chip,.pill{
-  display:inline-flex;align-items:center;padding:.4rem .7rem;border-radius:999px;
-  background:rgba(255,255,255,.06);border:1px solid var(--border);font-weight:600;color:#cfe7e3
+.btn--primary:hover{filter:brightness(.98)}
+.btn--ghost{background:#ffffff;border-color:var(--border);color:var(--text)}
+.btn--ghost:hover{background:#f7fafc}
+
+/* One unified, calm style for all pills/labels (black text) */
+.pill{
+  display:inline-flex;align-items:center;padding:.35rem .65rem;border-radius:999px;
+  background:#e9eef2;border:1px solid var(--border);font-weight:700;color:#0b0f12;
+  font-size:.88rem
 }
-.pill--accent{background:linear-gradient(135deg,rgba(34,197,94,.20),rgba(15,118,110,.20))}
-.pill--amber{background:linear-gradient(135deg,rgba(245,158,11,.20),rgba(245,158,11,.06))}
 
 /* Hero */
-.hero{position:relative;isolation:isolate}
+.hero{position:relative}
 .hero__band{
-  /* The image is extremely wide (1920×186). Repeat horizontally, fix height on mobile. */
+  /* mmbackground.jpg is 1920×186: repeat horizontally without scaling distortion */
   min-height:140px;
   background:
-    linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.45)), /* darken for text legibility */
+    linear-gradient(180deg, rgba(255,255,255,.0), rgba(255,255,255,.0)),
     url("/products/assets/images/mmbackground.jpg") center top repeat-x;
-  background-size:auto 140px, auto 140px; /* keep native aspect without stretching */
+  background-size:auto 140px, auto 140px;
   border-bottom:1px solid var(--border);
 }
-@media(min-width:900px){.hero__band{min-height:180px;background-size:auto 180px, auto 180px}}
+@media(min-width:900px){.hero__band{min-height:170px;background-size:auto 170px, auto 170px}}
 .hero__content{display:grid;gap:var(--space-6);grid-template-columns:1fr;align-items:center;padding-block:clamp(1.25rem,5vw,2rem)}
 @media(min-width:940px){.hero__content{grid-template-columns:1.15fr .85fr}}
 .hero__text h1{
@@ -110,18 +117,16 @@ body{
 }
 .hero__ctas{display:flex;gap:.8rem;margin-block:var(--space-4)}
 .proof{display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:var(--space-3) 0 0;list-style:none}
-.hero__media{box-shadow:var(--shadow)}
 
-/* Media frames: consistent borders that hug image edges */
+/* Media frames: perfect image/border alignment */
 .media-frame{
   position:relative;overflow:hidden;border-radius:var(--radius-lg);
-  border:1px solid var(--border);background:#0c1114
+  border:1px solid var(--border);background:#ffffff;box-shadow:var(--shadow)
 }
 .media-frame > img{
-  width:100%;height:100%;display:block;object-fit:cover;object-position:center;
-  border-radius:inherit; /* ensures border follows image curve perfectly */
+  width:100%;height:100%;display:block;object-fit:cover;object-position:center;border-radius:inherit
 }
-/* Aspect ratios (prevent distortion; small, opinionated crop with object-fit: cover) */
+/* Aspect ratios (minimal crop, no stretch) */
 .ratio-1x1{aspect-ratio:1/1}
 .ratio-4x3{aspect-ratio:4/3}
 .ratio-3x4{aspect-ratio:3/4}
@@ -129,36 +134,36 @@ body{
 
 /* Cards */
 .card{
-  background:linear-gradient(180deg,var(--panel) 0%,var(--panel-2) 100%);
-  border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);
-  display:flex;flex-direction:column;overflow:hidden
+  background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);
+  box-shadow:var(--shadow);display:flex;flex-direction:column;overflow:hidden
 }
 .card__header{padding:1rem 1rem .5rem}
-.card__title{margin:0;font-size:1.15rem;font-weight:700;font-family:var(--font-ui)}
+.card__title{margin:0;font-size:1.15rem;font-weight:700}
 .card__body{padding:1rem;color:var(--muted)}
 .card__footer{padding:1rem;display:flex;gap:.6rem;flex-wrap:wrap;border-top:1px solid var(--border)}
+.price{font-size:1.05rem;color:var(--text);margin:.15rem 0 .35rem}
 
 /* Facts */
 .facts{display:grid;gap:1rem;grid-template-columns:1fr}
 @media(min-width:860px){.facts{grid-template-columns:repeat(3,1fr)}}
-.fact{padding:1rem 1.1rem;border:1px solid var(--border);border-radius:16px;background:linear-gradient(180deg,var(--panel) 0%,var(--panel-2) 100%);box-shadow:var(--shadow)}
+.fact{padding:1rem 1.1rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);box-shadow:var(--shadow)}
 .fact h3{margin:.1rem 0 .25rem;font-size:1rem;font-weight:700}
 .fact p{margin:.25rem 0 0;color:var(--muted)}
 
-/* Contact CTA */
+/* Contact */
 .contact-cta{display:grid;gap:1rem;justify-items:center;text-align:center}
 .cta-buttons{display:flex;gap:.8rem;flex-wrap:wrap;justify-content:center}
 
 /* Footer */
-.site-footer{background:#0a0d10;margin-top:var(--space-6)}
+.site-footer{background:#ffffff;margin-top:var(--space-6);border-top:1px solid var(--border)}
 .footer-inner{display:grid;gap:var(--space-6);grid-template-columns:1fr;align-items:start;padding-block:2rem}
 .footer-brand .brand__logo{height:28px}
 @media(min-width:900px){.footer-brand .brand__logo{height:34px}}
 .footer-nav ul{list-style:none;margin:0;padding:0;display:grid;gap:.4rem}
-.footer-bottom{border-top:1px solid var(--border);text-align:center;color:#94a3b8;padding:.9rem 1rem}
+.footer-bottom{border-top:1px solid var(--border);text-align:center;color:#64748b;padding:.9rem 1rem}
 
 /* A11y & motion */
 .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
-.skip-link:focus{left:1rem;top:1rem;width:auto;height:auto;background:#000;color:#fff;padding:.5rem .75rem;border-radius:8px}
-:focus-visible{outline:3px solid #94c5fd;outline-offset:2px}
+.skip-link:focus{left:1rem;top:1rem;width:auto;height:auto;background:#111;color:#fff;padding:.5rem .75rem;border-radius:8px}
+:focus-visible{outline:3px solid #93c5fd;outline-offset:2px}
 @media(prefers-reduced-motion:reduce){html:focus-within{scroll-behavior:auto}}
